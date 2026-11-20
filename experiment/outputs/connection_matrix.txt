@@ -1,0 +1,10 @@
+Assumed architecture connection matrix; NOT extracted from chain data
+modules: dispatch, stack, alu, keccak, memory, state, cache, dram
+0 1 1 1 1 1 0 0
+1 0 1 0 1 1 0 0
+1 1 0 0 0 0 0 0
+1 0 0 0 1 0 0 0
+1 1 0 1 0 0 0 1
+1 1 0 0 0 0 1 0
+0 0 0 0 0 1 0 1
+0 0 0 0 1 0 1 0

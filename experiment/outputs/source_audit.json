@@ -1,0 +1,17 @@
+[
+  {
+    "chain": "Ethereum_Mainnet",
+    "files": 76,
+    "rows": 22656
+  },
+  {
+    "chain": "Optimism",
+    "files": 76,
+    "rows": 136800
+  },
+  {
+    "chain": "Arbitrum_One",
+    "files": 76,
+    "rows": 1081373
+  }
+]

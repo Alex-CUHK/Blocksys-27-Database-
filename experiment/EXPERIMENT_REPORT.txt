@@ -1,0 +1,91 @@
+EVM Layout Experiment: Initial Architecture-Level Feasibility Study
+Date: 2026-11-20
+Initiator: Alex-CUHK <alexus20568@gmail.com>
+GitHub: https://github.com/Alex-CUHK
+
+Status: Static layout modeling is complete. Real EVM replay, communication tracing,
+and cycle-level performance evaluation are not complete.
+
+1. Source data and pilot selection
+All 228 compressed files were scanned: Ethereum Mainnet 22,656 block records,
+Optimism 136,800 records, and Arbitrum One 1,081,373 records.
+Within each chain, sampled hours are ranked by total gas used. Hours near ranks
+10%, 50%, and 90% are selected. The median-gas block within each selected hour
+is retained, producing nine candidate blocks. File SHA256 and block hashes are
+recorded. These are pipeline pilot samples, not population-representative samples.
+Selection is not stratified by protocol phase and includes supplemental event
+dates. Gas is not compared across chains. Source records have not been independently
+verified against a node.
+
+2. Assumed architecture
+Eight equal-area slots represent dispatch, stack, ALU, Keccak, memory, state,
+cache, and DRAM interface modules. 'dram' means an on-chip external-memory
+interface, not an equal-area physical DRAM chip.
+Twelve manually specified undirected edges have unit weight; the diagonal is zero.
+This is an assumed architecture, not an RTL netlist or connectivity inferred from
+SQD data. Module order and matrix are in outputs/architecture.json.
+
+3. Optimization model
+Baseline 2D: a 4-by-2 unit grid, populated in module-list order.
+Optimized 2D: the same slots, with exhaustive enumeration of all 8! = 40,320 mappings.
+3D: a 2-by-2-by-2 grid, with the same enumeration budget and total slot area,
+but half the projected footprint.
+Objective: C = sum_ij A_ij * (abs(xi-xj) + abs(yi-yj) + lambda*abs(zi-zj)).
+Symmetric adjacency counts each undirected edge twice; this does not affect the
+optimal mapping or relative improvements. Lambda is an assumed normalized
+vertical communication cost, not a measured delay. This is not a reproduction
+of the Rect3D algorithm.
+
+4. Executed results
+Baseline 2D: C=44. Optimized 2D: C=32 (27.27% lower).
+3D at lambda=0.25: C=21; lambda=1: C=30; lambda=2: C=38; lambda=4: C=54.
+Relative to optimized 2D, these are reductions of 34.375% and 6.25%, followed by
+increases of 18.75% and 68.75%.
+Conclusion is limited to the assumed equal-area fixed-slot model: the benefit of
+3D depends on vertical cost. No EVM throughput, energy, physical wirelength, or
+execution-time improvement has been demonstrated. The manually ordered baseline
+is not a competitive engineering baseline.
+
+5. Missing real-workload inputs
+The source contains block aggregates, not execution traces or module traffic.
+One debug_traceBlockByNumber capability probe per public Ethereum, Optimism,
+and Arbitrum endpoint returned -32601 (method unavailable). See rpc_probe.json.
+This applies only to the tested endpoints and requests, not all providers.
+The requester confirmed that no archive/debug RPC or trace files are available.
+No real per-chain communication matrices or EVM speedups have been fabricated.
+
+6. Next-stage requirements and acceptance criteria
+Obtain historical opcode traces for the candidate blocks. Verify chain ID, block
+number/hash, transaction count and receipts before tracing all transactions.
+Call traces alone are insufficient for stack, memory and storage modeling.
+Required trace details depend on the model: opcode, call depth, relevant stack
+values and memory lengths. Precompiles and chain-specific operations need explicit
+handling. Model cache capacity/line size, hits/misses, state-access mapping,
+operation latency and link bandwidth. SLOAD counts are not DRAM-access counts.
+The current program accepts simulator-generated communication events; it does
+not implement opcode-to-event mapping or cycle-level simulation.
+Total event bytes must equal the sum of the directed traffic matrix. A layout
+optimized separately for each workload is only an upper bound. Formal evaluation
+must split dates into training/validation/test sets, freeze layouts using training
+workloads and evaluate unseen workloads. Traffic timing, contention, queues and
+compute cycles are needed for end-to-end speedup; an aggregate matrix omits them.
+Phase-stratified samples, stronger baselines, parameter sensitivity, area, power,
+thermal and vertical-link constraints remain necessary for hardware conclusions.
+
+7. Reproduction from the experiment directory
+python3 experiment.py --source ../data/raw
+python3 -m unittest discover -s . -p 'test_*.py' -v
+python3 probe_rpc.py
+Four checks passed: byte conservation/direction, vertical geometry, optimum and
+legal placement, and rejection of missing provenance.
+
+Communication-event schema example (format only; not measured data):
+{"provenance":"SIMULATED_FROM_REAL_TRACE","architecture_model":"model-version-and-parameter-hash","workload_id":"chain:blockhash:tracehash","events":[{"src":"stack","dst":"alu","bytes":32}]}
+python3 experiment.py --events /absolute/path/events.json
+The loader trusts the provenance declaration. Retain original traces and mapping
+model versions/hashes to support independent verification.
+
+References
+https://arxiv.org/html/2609.18946v1
+https://geth.ethereum.org/docs/developers/evm-tracing/basic-traces
+https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-debug

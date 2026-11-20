@@ -1,0 +1,110 @@
+[
+  {
+    "chain": "Ethereum_Mainnet",
+    "level": "low",
+    "source": "data/raw/Ethereum_Mainnet/2024-08-31.csv.gz",
+    "sha256": "bdd13f4a366fc14fd445bb5d4ae168e8349241e462f33ecbe68d92f856e90f43",
+    "hour_gas": 4492126889,
+    "block_number": 20648464,
+    "block_hash": "0x64802201adad90bea2b80b01eb3a6a920e2bda867a37174454efce48417f1f23",
+    "timestamp": "2024-08-31T12:10:11Z",
+    "tx_count": 198,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Ethereum_Mainnet",
+    "level": "medium",
+    "source": "data/raw/Ethereum_Mainnet/2025-03-31.csv.gz",
+    "sha256": "3ab56f20d10501d36cfba7884f4c74674781866788841be3bce6ba797cb1abbb",
+    "hour_gas": 5503971837,
+    "block_number": 22166968,
+    "block_hash": "0x4eff0b93c907d84c30742a361173018f74494f50331c63b4cd486693a5fba7cb",
+    "timestamp": "2025-03-31T12:41:59Z",
+    "tx_count": 215,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Ethereum_Mainnet",
+    "level": "high",
+    "source": "data/raw/Ethereum_Mainnet/2026-07-27.csv.gz",
+    "sha256": "9343768c5afe2d7f0db4fd8547a6a9aa42bf13b1d6fd92f7d4ec245e1d395f38",
+    "hour_gas": 9138352765,
+    "block_number": 25624281,
+    "block_hash": "0x5c9a23cdd5a4cf0822ded8cb16b6a1bd03a653922535f3d0f9e757fa22583eef",
+    "timestamp": "2026-07-27T12:55:47Z",
+    "tx_count": 278,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Optimism",
+    "level": "low",
+    "source": "data/raw/Optimism/2024-05-18.csv.gz",
+    "sha256": "298b9e713f942f70dca582dce873a4db8ae1365f0f4fd20f4b828e7d79d41838",
+    "hour_gas": 9148446895,
+    "block_number": 120217758,
+    "block_hash": "0x150125ba24c88f36788640073bc3155f07055ed54ecb7a13dc6cfdbc798086ee",
+    "timestamp": "2024-05-18T12:11:33Z",
+    "tx_count": 12,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Optimism",
+    "level": "medium",
+    "source": "data/raw/Optimism/2026-05-08.csv.gz",
+    "sha256": "90d092b47730bda5b841c0324b02ac93f070864a5cd42cf0f5f71f58334d1297",
+    "hour_gas": 18426395330,
+    "block_number": 151322560,
+    "block_hash": "0xa0459ede456e8a26dec679aef0a02086b486947d8263e273c3c8e7f4617020ef",
+    "timestamp": "2026-05-08T12:38:17Z",
+    "tx_count": 26,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Optimism",
+    "level": "high",
+    "source": "data/raw/Optimism/2025-06-09.csv.gz",
+    "sha256": "4b698a513c7d452e66301ea9b5f8a04356bc6b5477f5f754fff1489cf01870be",
+    "hour_gas": 34482132485,
+    "block_number": 136937362,
+    "block_hash": "0x32a8a0b2e79752207d713c5985b750979fc3473304ec4d5a35456d4ae0e9bb86",
+    "timestamp": "2025-06-09T12:51:41Z",
+    "tx_count": 30,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Arbitrum_One",
+    "level": "low",
+    "source": "data/raw/Arbitrum_One/2025-02-01.csv.gz",
+    "sha256": "858187d05891379045a584fa4f16be14b9e4d4e50f6391745a7b0a32af42abe6",
+    "hour_gas": 10337456552,
+    "block_number": 301512162,
+    "block_hash": "0xf29d9331f64df28109528629c54eea69793a40bcf5695f1e0cb142fc2726a23e",
+    "timestamp": "2025-02-01T12:10:54Z",
+    "tx_count": 4,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Arbitrum_One",
+    "level": "medium",
+    "source": "data/raw/Arbitrum_One/2025-11-15.csv.gz",
+    "sha256": "3c8c4975631d8c868ec93d1ae735b3075916fe2c3988fcddef8f2f81c579581f",
+    "hour_gas": 20458931142,
+    "block_number": 400516146,
+    "block_hash": "0x494e148ba0fd02ef8530e96ccf95e142e312a7d25a1d8b628d0e0a32b0fc1682",
+    "timestamp": "2025-11-15T12:42:48Z",
+    "tx_count": 8,
+    "status": "TRACE_REQUIRED"
+  },
+  {
+    "chain": "Arbitrum_One",
+    "level": "high",
+    "source": "data/raw/Arbitrum_One/2024-01-04.csv.gz",
+    "sha256": "69e1e28f3143e6455d28c24d6b9c95fd5052a70093381b0ad848951836b07adf",
+    "hour_gas": 52959811859,
+    "block_number": 166997140,
+    "block_hash": "0xc7496fd138a0a47a0896eea9260a5e472d4582d6b60c822ecf1d21fe98a022fc",
+    "timestamp": "2024-01-04T12:06:51Z",
+    "tx_count": 5,
+    "status": "TRACE_REQUIRED"
+  }
+]

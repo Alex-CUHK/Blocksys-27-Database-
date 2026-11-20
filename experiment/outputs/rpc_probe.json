@@ -1,0 +1,44 @@
+[
+  {
+    "chain": "Ethereum_Mainnet",
+    "endpoint": "https://ethereum-rpc.publicnode.com",
+    "probe_block": "genesis",
+    "result": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32601,
+        "message": "the method debug_traceBlockByNumber does not exist/is not available"
+      },
+      "id": 1
+    },
+    "historical_sample_trace_verified": false
+  },
+  {
+    "chain": "Optimism",
+    "endpoint": "https://optimism-rpc.publicnode.com",
+    "probe_block": "genesis",
+    "result": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32601,
+        "message": "the method debug_traceBlockByNumber does not exist/is not available"
+      },
+      "id": 1
+    },
+    "historical_sample_trace_verified": false
+  },
+  {
+    "chain": "Arbitrum_One",
+    "endpoint": "https://arbitrum-one-rpc.publicnode.com",
+    "probe_block": "genesis",
+    "result": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32601,
+        "message": "the method debug_traceBlockByNumber does not exist/is not available"
+      },
+      "id": 1
+    },
+    "historical_sample_trace_verified": false
+  }
+]
