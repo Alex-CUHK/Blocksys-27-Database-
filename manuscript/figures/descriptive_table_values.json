@@ -1,0 +1,86 @@
+{
+  "Ethereum_Mainnet": {
+    "totals": {
+      "blocks": 21460,
+      "tx_count": 4816644,
+      "failed_tx_count": 68861
+    },
+    "pooled_failure_percent": 1.4296468661582629,
+    "hourly": {
+      "blocks": {
+        "mean": 298.05555555555554,
+        "sd": 1.5644725420723364,
+        "median": 298.0,
+        "iqr": 2.0
+      },
+      "tx_count": {
+        "mean": 66897.83333333333,
+        "sd": 22820.187755828556,
+        "median": 59843.0,
+        "iqr": 27971.75
+      },
+      "failed_tx_count": {
+        "mean": 956.4027777777778,
+        "sd": 423.4491392284344,
+        "median": 790.5,
+        "iqr": 449.0
+      }
+    }
+  },
+  "Optimism": {
+    "totals": {
+      "blocks": 129600,
+      "tx_count": 3664812,
+      "failed_tx_count": 190514
+    },
+    "pooled_failure_percent": 5.198465842176898,
+    "hourly": {
+      "blocks": {
+        "mean": 1800.0,
+        "sd": 0.0,
+        "median": 1800.0,
+        "iqr": 0.0
+      },
+      "tx_count": {
+        "mean": 50900.166666666664,
+        "sd": 27892.302835960993,
+        "median": 47029.5,
+        "iqr": 35357.25
+      },
+      "failed_tx_count": {
+        "mean": 2646.027777777778,
+        "sd": 2729.7567552585156,
+        "median": 1756.5,
+        "iqr": 2447.25
+      }
+    }
+  },
+  "Arbitrum_One": {
+    "totals": {
+      "blocks": 1029423,
+      "tx_count": 7202553,
+      "failed_tx_count": 725471
+    },
+    "pooled_failure_percent": 10.072414600767257,
+    "hourly": {
+      "blocks": {
+        "mean": 14297.541666666666,
+        "sd": 258.87192643424015,
+        "median": 14371.5,
+        "iqr": 81.0
+      },
+      "tx_count": {
+        "mean": 100035.45833333333,
+        "sd": 41788.598340863435,
+        "median": 93294.5,
+        "iqr": 51736.5
+      },
+      "failed_tx_count": {
+        "mean": 10075.986111111111,
+        "sd": 9719.295077453986,
+        "median": 7368.5,
+        "iqr": 8820.5
+      }
+    }
+  }
+}

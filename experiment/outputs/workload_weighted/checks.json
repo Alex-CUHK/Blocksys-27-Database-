@@ -1,0 +1,17 @@
+[
+  {
+    "chain": "Ethereum_Mainnet",
+    "distinct_edge_weight_vectors": 72,
+    "uniform_scaling_preserves_all_cost_orderings": true
+  },
+  {
+    "chain": "Optimism",
+    "distinct_edge_weight_vectors": 72,
+    "uniform_scaling_preserves_all_cost_orderings": true
+  },
+  {
+    "chain": "Arbitrum_One",
+    "distinct_edge_weight_vectors": 70,
+    "uniform_scaling_preserves_all_cost_orderings": true
+  }
+]

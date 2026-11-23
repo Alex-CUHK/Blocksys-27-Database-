@@ -1,0 +1,10 @@
+{
+  "status": "PARTIAL",
+  "observed_blocks": 10,
+  "observed_bytes": 753,
+  "estimated_arbitrum_blocks_549_days": 189728682.87945205,
+  "estimated_minimal_transfer_bytes": 14286569820.822739,
+  "basis": "2025-06-01 to 2026-06-01 observed boundary block difference; extrapolation, NOT exact full-window count",
+  "excludes": "transactions, hashes, provenance overhead, retries, other chains",
+  "sample_sha256": "c197593cc82efdba65ac7ad04162622d233f4395b4c9a3c300e76c8fb43a6bbc"
+}

@@ -1,0 +1,201 @@
+\documentclass[runningheads]{llncs}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage[varvw]{newtxmath}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
+\begin{document}
+\title{Workload Characterization and Physical Layout Modeling for EVM State Processing}
+\titlerunning{Workloads and Layout Modeling for EVM State Processing}
+% Working title and author metadata; affiliation to be supplied before submission.
+\author{Alex-CUHK}
+\authorrunning{Alex-CUHK}
+\institute{\email{alexus20568@gmail.com}}
+\maketitle
+\begin{abstract}
+State access, updates, and commitment computation are potential targets for accelerating Ethereum Virtual Machine (EVM) execution, but their hardware requirements must be established from execution-level evidence. This study develops a workload characterization and architecture-level evaluation framework for Ethereum Mainnet, OP Mainnet, and Arbitrum One. A reproducible stratified probability design selects 72 dates across twelve three-month phases, with a common one-hour observation window on all three networks. Two additional dates surrounding Ethereum's Dencun upgrade are retained for separate event analysis. We report descriptive statistics and map instruction-level dataflows to an eight-module accelerator model. In a synthetic trace pilot, exactly optimized planar and two-layer layouts have the same weighted communication cost when planar and vertical hops have equal cost. The result changes as vertical-hop cost varies. The chain dataset contains block headers and receipt-derived aggregates. Trace replay of sampled blocks and RTL-based performance validation are needed to connect these results to hardware performance.
+\keywords{Ethereum Virtual Machine \and Workload characterization \and State processing \and Hardware acceleration \and Three-dimensional integration}
+\end{abstract}
+
+\section{Introduction}
+Conceived by Vitalik Buterin as a decentralized world computer, Ethereum introduced the Ethereum Virtual Machine (EVM) to provide a programmable execution environment for smart contracts. During the initial coin offering (ICO) boom, numerous projects used Ethereum's smart contract infrastructure to issue ERC-20 tokens, raise funds in Ether (ETH), and distribute tokens to investors. Alongside the growing adoption of smart contracts, early protocol upgrades sought to improve EVM execution efficiency and reduce gas costs. EIP-145 introduced native bitwise shift instructions, reducing the processing overhead and gas cost of shift operations~\cite{eip145}. EIP-1052 introduced the \texttt{EXTCODEHASH} opcode, allowing contracts to obtain a code hash without copying and hashing the entire bytecode~\cite{eip1052}. Both proposals were implemented in the Constantinople upgrade, reflecting early efforts to optimize smart contract execution at the instruction level~\cite{constantinople}.
+
+As smart contract capabilities developed, applications expanded to decentralized finance (DeFi), including Uniswap; blockchain gaming, including Axie Infinity; and virtual-world platforms, including The Sandbox. These applications broadened the use of programmable assets in finance, gaming, and digital ownership. The rapid growth of on-chain activity also placed increasing pressure on Ethereum's limited mainnet capacity. Periods of high demand in 2021 exposed the effects of congestion and high transaction fees on application usability.
+
+Layer 2 (L2) rollups have become an important scaling approach within the Ethereum ecosystem. Examples include Arbitrum One, OP Mainnet, and Base. Rollups execute transactions outside Ethereum's Layer 1 (L1), batch their results, and publish the data required by their protocol to Ethereum, which provides settlement and data availability. Sequencers order transactions and offer preliminary confirmations; fraud proofs or validity proofs provide mechanisms for checking execution, depending on the rollup design. Nevertheless, scaling execution beyond L1 does not eliminate constraints in sequencing capacity, execution efficiency, or state management.
+
+These constraints matter for increasingly complex and time-sensitive DeFi applications, particularly lending and perpetual futures markets. Under extreme market conditions, liquidations can generate bursts of transactions, increasing the risk of congestion and delayed execution. CoinGlass reported more than US\$19 billion in market-wide liquidations on October 10, 2025, alongside congestion in withdrawal and asset-transfer channels~\cite{coinglass}. These market-wide observations do not by themselves identify an Ethereum execution bottleneck. Separately, Base reported a 33-minute disruption in August 2025 and two block-production outages in June 2026~\cite{baseaug,basejun}. Its June postmortem identified stale execution journal state after a failed transaction as a cause of invalid block construction. Such incidents motivate investigation of state-processing performance and correctness, but do not establish that hardware acceleration would prevent software failures. Base is included here as contextual motivation, not as a network in our empirical sample.
+
+To investigate these challenges, this study examines Ethereum L1 and representative EVM-compatible L2 workloads, focusing on state processing, hardware acceleration, and physical implementation. We formulate three research questions:
+\begin{description}
+\item[RQ1: Workload characterization.] What are the dominant performance bottlenecks in state processing across Ethereum L1 and EVM-compatible L2 networks, and how do they vary with workload intensity and transaction characteristics?
+\item[RQ2: Hardware acceleration.] To what extent can specialized hardware architectures alleviate bottlenecks in state access, updates, and commitment computation compared with conventional CPU-based implementations?
+\item[RQ3: Physical architecture.] How does 3D integration affect communication, performance, and energy efficiency relative to a planar layout under representative blockchain workloads?
+\end{description}
+The empirical scope is Ethereum Mainnet, OP Mainnet (Optimism), and Arbitrum One. The present stage establishes the dataset and an architecture-level modeling protocol. Answering the performance components of these questions requires subsequent execution tracing and hardware evaluation.
+
+
+\section{Dataset and Sampling Design}
+\subsection{Observation Window and Probability Sampling}
+The observation window extends from November 16, 2023, at 00:00 UTC (inclusive) to November 16, 2026, at 00:00 UTC (exclusive), spanning 1,096 calendar days. Rather than collecting every day, we partition the window into twelve consecutive three-month phases. Within each phase, UTC weekdays and weekends form separate strata. Using a fixed random seed of 20231116, we select four weekdays and two weekend days without replacement. The same dates are used for all three networks. On each selected date, all blocks timestamped within the half-open interval [12:00, 13:00) UTC are collected.
+
+This produces 72 probability-sampled dates: 48 weekdays and 24 weekend days. Every calendar day has a known, positive inclusion probability within its phase and weekday/weekend stratum. For stratum $h$, containing $N_h$ eligible dates and $n_h$ selected dates, the inclusion probability is $\pi_h=n_h/N_h$. The design supports reproducible comparisons at matched observation times and captures temporal variation across protocol phases and the weekly cycle. It does not imply that selected hours represent population quintiles or activity at other times of day.
+
+\subsection{Event Supplements and Analysis Populations}
+Two prespecified dates surrounding Ethereum's Dencun upgrade, March 12 and March 14, 2024, are retained as event supplements. They are labeled separately and are not pooled with probability samples to estimate population quantities. Two additional dates in the original collection calendar, November 7 and November 14, 2026, were included for a Base-related event and are excluded from this study because Base is outside its empirical scope.
+
+All three networks have observations for every retained date. The retained dataset therefore contains 74 dates and 222 chain-hours: 216 probability-sampled chain-hours and six Dencun event chain-hours. It is balanced at the chain-hour level, although block counts vary by network. All descriptive tables below use only the 72 probability dates per chain. Event comparisons are separate and cannot, from two dates alone, establish a causal upgrade effect.
+
+The unweighted tables describe the observed sample. Design-based estimation of a three-year mean at the fixed daily observation hour requires stratum weights. For a chain-level hourly outcome $y_d$, an appropriate estimator is
+\begin{equation}
+\widehat{\mu}=\frac{1}{1096}\sum_h\frac{N_h}{n_h}\sum_{d\in s_h}y_d,
+\end{equation}
+where $s_h$ is the sampled set of dates in stratum $h$. Matched cross-chain differences can be estimated using the same weights. Inference is restricted to the daily 12:00--13:00 UTC population over this window, not to full-day activity or all EVM networks.
+
+\subsection{Data Fields and Missingness}
+The source is SQD Portal block-header and transaction-receipt data. Identifiers, timestamps, hashes, state roots, and source metadata are retained for provenance and replay selection. Descriptive analysis uses 15 numerical fields reported as complete in the supplied statistical report: gas used, gas limit, gas utilization, base fee, block size, transaction count, summed transaction gas, failed transaction count, contract-creation count, transactions with a destination address, and transaction counts for types 0, 1, 2, 3, and other types.
+
+Blob gas fields are excluded from the common three-chain analysis because availability differs across networks and forks. Eight reserved execution-level fields, including storage operations, trie accesses, Keccak operations, dependency depth, and RTL communication bytes, are unpopulated. Missing observations are not replaced with zero. In particular, state roots do not expose the execution accesses needed to reconstruct module traffic.
+
+\section{Descriptive Workload Statistics}
+Table~\ref{tab:sample} reports the probability-sample coverage. These totals were cross-checked against the original compressed files. Tables~\ref{tab:hourly} and~\ref{tab:levels} summarize selected hourly statistics and the load grouping from the supplied descriptive-statistics report. Their values are sample summaries, not weighted population estimates.
+
+% Selected source tables are inserted below.
+\begin{table}[t]
+\caption{Probability-sample coverage, excluding all event supplements.}\label{tab:sample}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule Network & Hours & Blocks & Transactions \\\midrule
+Ethereum Mainnet & 72 & 21,460 & 4,816,644 \\
+Optimism & 72 & 129,600 & 3,664,812 \\
+Arbitrum One & 72 & 1,029,423 & 7,202,553 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]
+\caption{Selected hourly statistics for the 72 probability dates per network. Values are reproduced from the supplied descriptive report; SD denotes sample standard deviation.}\label{tab:hourly}
+\centering\small
+\begin{tabular}{@{}llrr@{}}
+\toprule Network & Metric & Mean & SD \\\midrule
+Ethereum & Blocks & 298.06 & 1.564 \\
+Ethereum & Transactions & 66,897.83 & 22,820.19 \\
+Ethereum & Failed transactions & 956.40 & 423.45 \\
+\addlinespace
+OP Mainnet & Blocks & 1,800 & 0 \\
+OP Mainnet & Transactions & 50,900.17 & 27,892.30 \\
+OP Mainnet & Failed transactions & 2,646.03 & 2,729.76 \\
+\addlinespace
+Arbitrum One & Blocks & 14,297.54 & 258.87 \\
+Arbitrum One & Transactions & 100,035.46 & 41,788.60 \\
+Arbitrum One & Failed transactions & 10,075.99 & 9,719.30 \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[t]
+\caption{Within-phase rank groups across twelve phases. Each phase contributes two hours to each group, per chain.}\label{tab:levels}
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule Network & Total & Low & Medium & High \\\midrule
+Ethereum Mainnet & 72 & 24 & 24 & 24 \\
+Optimism & 72 & 24 & 24 & 24 \\
+Arbitrum One & 72 & 24 & 24 & 24 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Within-Phase Load Groups}
+For each chain and phase, the six probability-sampled hours are sorted by total gas used, with ties broken by earlier date. The lowest two hours form L1 (low), the next two form L2 (medium), and the highest two form L3 (high). Thus each chain contributes 24 hours to each load group across twelve phases. These labels denote within-sample rank groups rather than population quantile thresholds. Gas accounting differs across networks, so absolute gas totals should not be interpreted as comparable measures of cross-chain hardware pressure.
+
+Hourly transaction counts and block volumes provide useful workload context, but aggregate gas and transaction counts cannot determine how much work is spent on state access, commitment computation, or memory stalls. Arbitrum's reported block gas limit is constant at $1{,}125{,}899{,}906{,}842{,}624$ in the sample; the resulting very small gas-utilization ratios should not be interpreted as physical execution-capacity utilization. Pearson correlations, where examined, are calculated separately by chain. Correlations involving constant variables are undefined. A correlation matrix of workload indicators is not a hardware connection matrix.
+
+\section{Architecture and Evaluation Methodology}
+\subsection{Minimal Accelerator Model}
+We define an initial architecture-level model with eight candidate modules: instruction dispatch, stack storage, an arithmetic execution unit, a Keccak unit, memory, a state-access controller, a cache, and an external-memory interface. Table~\ref{tab:modules} specifies their intended roles. Before timing evaluation, each interface must be assigned a data width, sustainable bandwidth, processing latency, and buffering policy. These are model parameters to be specified and calibrated, not measurements recoverable from block aggregates. Without an RTL implementation, results are explicitly characterized as architecture-level estimates.
+\begin{table}[t]
+\caption{Candidate modules and interface roles in the initial architecture.}\label{tab:modules}
+\small\centering
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule Module & Intended input and output role \\\midrule
+Instruction dispatch & Decode instructions and issue commands to execution and state units.\\
+Stack & Supply 256-bit operands and receive execution results.\\
+Arithmetic unit & Consume operands and return arithmetic or logical results.\\
+Keccak unit & Consume byte sequences and return hashes.\\
+Memory & Serve execution-memory reads, writes, and hashing inputs.\\
+State controller & Translate account/storage requests into state-access operations.\\
+Cache & Serve cached state data and forward misses or writebacks.\\
+External-memory interface & Exchange memory requests and responses with off-chip storage.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+For modules $b_i$ and $b_j$, a static connection matrix can be constructed from a specified architecture or netlist:
+\begin{equation}
+A_{ij}=\sum_{e:\{b_i,b_j\}\subseteq S_e}c_e \quad(i\ne j),\qquad A_{ii}=0,
+\end{equation}
+where $S_e$ is the set of modules attached to connection $e$ and $c_e$ is its specified weight. This follows the connectivity-based formulation used in Rect3D~\cite{rect3d}. For the pilot, we set $c_e=1$ for each logical interface and derive the active edges from the following operation-to-interface mapping.
+
+\paragraph{Operand and result paths.} \texttt{ADD} reads two stack words and returns one, motivating a stack--arithmetic interface. \texttt{MLOAD} and \texttt{MSTORE} exchange an offset and a data word between the stack and execution memory. \texttt{KECCAK256} takes an offset and length from the stack, reads the indicated memory region, and pushes a digest~\cite{evmcancun}. We keep the memory--Keccak interface in both designs and compare a direct stack--Keccak operand and result path with forwarding through dispatch.
+
+\paragraph{Control and state paths.} Dispatch issues commands to the stack, arithmetic, Keccak, memory, and state modules. It also carries the range operands from the stack and the memory response for \texttt{RETURN}. \texttt{SLOAD} and \texttt{SSTORE} exchange a key and value with the stack through the state controller~\cite{evmcancun}. We model state storage with an associative least-recently-used cache and one external-memory interface. The cache issues a backing read on a miss and writes back dirty entries on eviction or at the end of a kernel. Execution memory stays on chip for these kernels, so the supplied execution-memory--external-memory link carries no traffic. These routing and caching rules define the candidate implementations. The EVM specification supplies the operands and operation semantics.
+
+\subsection{Replay Sample Selection}
+Block numbers, hashes, timestamps, gas use, and transaction counts identify real blocks for subsequent replay. Replay selection will cover all twelve phases and the three within-phase load groups, separately for each chain. A small pilot will first validate the pipeline before expanding its coverage. The earlier nine-block feasibility manifest used whole-period load ranks and is not treated as the final phase-stratified evaluation set. Its candidates must be reconciled with the probability calendar and revised grouping before formal performance analysis.
+
+\subsection{Execution Tracing and Communication Mapping}
+The next stage requires historical state and transactions sufficient for faithful replay, or sufficiently detailed execution traces from a compatible node. Block hashes and transaction counts must first be checked against the collection records. Traces must expose the operations and operands needed for the chosen model, including execution depth, memory access lengths, and state-access information. Precompiles and network-specific execution rules require explicit handling.
+
+The architecture model will map these traces to communication events recording a source module, destination module, byte count, and time or cycle. For workload $w$, the directed traffic matrix is
+\begin{equation}
+T_{ij}^{(w)}=\sum_{k\in\mathcal{E}_{ij}^{(w)}}q_k,
+\end{equation}
+where $q_k$ is the number of transferred bytes for event $k$. Cache behavior, state representation, and request routing determine these events. Failed and reverted execution can incur communication before state changes are discarded and require explicit treatment when replaying sampled blocks.
+
+\paragraph{Synthetic trace pilot.} We executed five short bytecode kernels with the Cancun VM in Py-EVM 0.12.1b1~\cite{pyevm}. We checked returned words, final storage values, and the sizes of the hashed memory ranges. The first four kernels exercise a chain of additions, 32- and 128-byte Keccak inputs, and identical sequences of storage increments over either two recurring slots or eight rotating slots. A fifth kernel issues grouped updates over four slots and is excluded from layout selection. For the pilot we accumulate a directed weight $W_{ij}$ in normalized transfer units. Each command or 256-bit operand consumes one unit, and a Keccak payload of $s$ bytes consumes $\lceil s/32\rceil$ units along the memory--Keccak interface. Each storage instruction performs one modeled cache lookup. At four cache slots, the two- and eight-slot kernels generate 2 and 17 backing reads, respectively, despite executing the same 33 storage instructions. The modeled cache counts are computed from the traced slot sequence and the specified replacement policy. EIP-2929 warm and cold classifications concern gas metering~\cite{eip2929}.
+
+\subsection{Controlled Layout and Performance Comparison}
+The evaluation will compare a baseline 2D layout, an optimized 2D layout, and a 3D layout while holding module counts, functional capacity, cache configuration, and external-memory resources fixed. Layout-dependent distances and vertical-link costs provide inputs to latency and bandwidth models. Training workloads will determine the layout; separate date-level validation and test windows will evaluate generalization, with matched dates kept in the same partition across networks.
+
+\paragraph{Matched layout pilot.} We enumerate placements on a $4\times2$ planar grid and a $2\times2\times2$ stacked grid with eight equal-pitch unit sites. The external-memory interface sits on the bottom tier. The stacked grid permits vertical hops between aligned sites. For a placement $P$ and a vertical-to-planar hop-cost ratio $r$, the weighted communication score is
+\begin{equation}
+C(P,r)=\sum_{i\ne j}W_{ij}\left(d_{xy}^{P}(i,j)+ r\,d_z^{P}(i,j)\right),
+\end{equation}
+where $d_{xy}^{P}$ is the in-plane Manhattan hop count and $d_z^{P}$ is the tier difference. For each interface design, we minimize $C$ for both geometries at $r=1$ using the combined traffic of the four design kernels and a four-slot cache. Subsequent evaluations vary $r$, cache capacity, or the access sequence while holding the selected placements fixed.
+
+\begin{table}[tb]
+\caption{Fixed-layout sensitivity to vertical hop cost with a four-slot cache. The two-layer columns report changes relative to the matched optimized planar score.}\label{tab:layout-pilot}
+\small\centering
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrr@{}}
+\toprule
+Interface design and workload & Planar score & $r=0.5$ & $r=1.0$ & $r=1.5$\\
+\midrule
+Direct, four design kernels & 1218 & $-23.5\%$ & $0\%$ & $+23.5\%$\\
+Via dispatch, four design kernels & 1246 & $-24.1\%$ & $0\%$ & $+24.1\%$\\
+Direct, held-out storage kernel & 401 & $-20.0\%$ & $0\%$ & $+20.0\%$\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+Table~\ref{tab:layout-pilot} shows that at equal hop cost the optimized layouts tie, under either routing choice and on the held-out storage kernel. With a cheaper vertical hop the score decreases, and with a more expensive vertical hop the score increases. The sensitivity has the same direction at two and eight cache slots. In the direct design at $r=1$, optimizing with trace weights reduces the pooled score from 1276 to 1218 in both geometries relative to optimizing with one weight per logical edge. The score models communication without contention in normalized transfer-hop units. End-to-end evaluation also requires calibrated module and link latencies, event dependencies, bandwidth limits, and queueing.
+
+\section{Threats to Validity}
+The study covers Ethereum Mainnet, OP Mainnet, and Arbitrum One, rather than the entire EVM ecosystem. The three-year window and twelve phases capture temporal diversity, but fixed-hour sampling excludes intraday variation. Sampling four weekdays and two weekend dates per phase yields unequal date inclusion probabilities; population estimates therefore require design weights, and uncertainty analysis must respect the sampling strata and shared dates. Event supplements are analyzed separately. Equal representation of within-phase load groups is useful for stress comparison, but any later targeted oversampling must not be confused with a population-average estimate.
+
+Block and receipt aggregates describe activity without identifying state-processing bottlenecks. Protocol changes, gas-accounting differences, and chain-specific state implementations can confound comparisons. The synthetic trace pilot covers a small opcode subset, models state as slot traffic, and uses equal-sized sites and normalized hop costs. It does not cover state-trie or journal behavior, full transaction replay, or implementation-dependent link timing. Independent date windows, cross-network replay, RTL simulation, and physical-design estimates are required to test whether the communication trends translate to execution-time or energy changes.
+
+\begin{thebibliography}{99}
+\bibitem{eip145} Beregszaszi, A., Bylica, P.: EIP-145: Bitwise shifting instructions in EVM (2017). \url{https://eips.ethereum.org/EIPS/eip-145}
+\bibitem{eip1052} Johnson, N., Bylica, P.: EIP-1052: EXTCODEHASH opcode (2018). \url{https://eips.ethereum.org/EIPS/eip-1052}
+\bibitem{constantinople} Ethereum Foundation: Constantinople execution specification. \url{https://steel.ethereum.foundation/docs/execution-specs/specs/reference/src/ethereum/forks/constantinople/index.html}
+\bibitem{coinglass} CoinGlass: 2025 Crypto Derivatives Market Annual Report. \url{https://www.coinglass.com/learn/2025-annual-report-en}
+\bibitem{baseaug} Base: Network disruption update, August 5, 2025. \url{https://x.com/buildonbase/status/1952783568784244863}
+\bibitem{basejun} Base Engineering Team: Postmortem: June 25th Block Production Outage (June 27, 2026). \url{https://www.base.org/blog/postmortem-june-25th-block-production-outage}
+\bibitem{rect3d} Ren, S., et al.: Rect3D: A Unified Analytical Framework for 3D-IC Rectilinear Floorplanning. arXiv:2609.18946 (2026). \url{https://arxiv.org/abs/2609.18946}
+\bibitem{evmcancun} Ethereum Foundation: Ethereum Execution Layer Specification, Cancun VM instructions (\href{https://ethereum.github.io/execution-specs/src/ethereum/forks/cancun/vm/instructions/arithmetic.py.html}{arithmetic}, \href{https://ethereum.github.io/execution-specs/src/ethereum/forks/cancun/vm/instructions/memory.py.html}{memory}, \href{https://ethereum.github.io/execution-specs/src/ethereum/forks/cancun/vm/instructions/keccak.py.html}{Keccak}, \href{https://ethereum.github.io/execution-specs/src/ethereum/forks/cancun/vm/instructions/storage.py.html}{storage}).
+\bibitem{pyevm} Ethereum Foundation: Py-EVM 0.12.1b1. \url{https://pypi.org/project/py-evm/0.12.1b1/}
+\bibitem{eip2929} Buterin, V., Swende, M.: EIP-2929: Gas cost increases for state access opcodes (2020). \url{https://eips.ethereum.org/EIPS/eip-2929}
+\end{thebibliography}
+\end{document}

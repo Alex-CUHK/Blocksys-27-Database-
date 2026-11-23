@@ -1,0 +1,4 @@
+simultaneous_confidence,populations,cdf_error,draws_per_population,total_hour_draws,expected_unique_P1_hours,status
+0.95,12,0.05,1235,14820,1077.4459831220215,PROPOSED_NOT_APPROVED
+0.95,12,0.025,4940,59280,2973.398314082279,PROPOSED_NOT_APPROVED
+0.95,12,0.01,30869,370428,4411.936944335188,PROPOSED_NOT_APPROVED

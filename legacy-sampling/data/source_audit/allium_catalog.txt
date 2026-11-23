@@ -1,0 +1,7 @@
+# Allium Documentation Hub: Data Catalog
+
+> Allium provides production-grade blockchain data infrastructure including historical data, realtime APIs, datashares, datastreams, and AI tools across 85+ blockchains.
+
+## Data Catalog
+
+- [Data Catalog / Data Catalog (1053 pages)](https://docs.allium.so/_llms/data-catalog/data-catalog.txt): Overview, Data Verticals, Solana, Hyperliquid, Lighter, Bitcoin Ecosystem, Cosmos Ecosystem, Move Ecosystem, Other Ecosystems.

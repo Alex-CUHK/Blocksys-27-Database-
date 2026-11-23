@@ -1,0 +1,20 @@
+{
+  "status": "REAL",
+  "python": "3.13.5",
+  "system": "macOS-13.2.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "cpu_count": 8,
+  "memory_bytes": "UNAVAILABLE: OS permission",
+  "free_bytes": 12022300672,
+  "project_bytes": 42422,
+  "git_commit": "UNAVAILABLE: no commit",
+  "seed": 20261115,
+  "prng": "Python random.MT19937",
+  "rpc_configured": {
+    "ETH": false,
+    "ARB": false,
+    "OP": false,
+    "SCROLL": false
+  },
+  "export_utc": "2026-11-15T07:15:29.575856+00:00"
+}

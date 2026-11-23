@@ -1,0 +1,79 @@
+Eight-Module Connection Matrices and Experiment Workflow
+Updated: November 23, 2026
+Initiator: Alex-CUHK (alexus20568@gmail.com)
+
+1. Model scope
+The architecture has eight candidate modules and a static 8-by-8 adjacency matrix A. The original topology was specified manually for a feasibility study. It was not extracted from Ethereum, OP Mainnet, Arbitrum One, or an RTL netlist. The current supplementary experiment adds weights informed by actual block aggregates, while retaining the assumed topology. Its weights remain dimensionless proxies.
+
+2. Module order
+1 dispatch: instruction scheduling and control requests.
+2 stack: operand supply and result storage.
+3 alu: arithmetic and logical execution.
+4 keccak: hashing.
+5 memory: execution memory access and hash inputs.
+6 state: account and storage access control.
+7 cache: cached state, misses, and writebacks.
+8 dram: on-chip external-memory interface, rather than the physical DRAM chip.
+
+This is a candidate functional partition. Full EVM instruction semantics, rollback, precompiles, chain-specific rules, bandwidth, buffering, and latency still require implementation and calibration. Modules may be split or combined in later designs.
+
+3. Static matrix construction
+experiment.py fixes the order in NAMES and specifies twelve undirected pairs in EDGES:
+dispatch-stack, dispatch-alu, dispatch-keccak, dispatch-memory,
+dispatch-state, stack-alu, stack-memory, stack-state,
+memory-keccak, state-cache, cache-dram, memory-dram.
+Each listed pair sets A[i,j]=A[j,i]=1. Other pairs and the diagonal are zero.
+The value 1 is a model weight, not a byte, access count, or cycle.
+
+             dispatch stack alu keccak memory state cache dram
+dispatch        0       1    1     1      1     1     0    0
+stack           1       0    1     0      1     1     0    0
+alu             1       1    0     0      0     0     0    0
+keccak          1       0    0     0      1     0     0    0
+memory          1       1    0     1      0     0     0    1
+state           1       1    0     0      0     0     1    0
+cache           0       0    0     0      0     1     0    1
+dram            0       0    0     0      1     0     1    0
+
+There are 24 nonzero entries because each undirected edge appears twice. For example, state connects directly to cache and reaches dram through cache. Missing edges describe this model, not a proof that hardware would never need other interfaces.
+
+4. Placement and static results
+The weight matrix remains fixed while module coordinates change. Coordinates form an 8-by-3 array of x, y, z positions.
+Baseline 2D: modules in listed order on a 4-by-2 grid at z=0.
+Optimized 2D: all assignments to the same grid.
+Two-layer 3D: all assignments to a 2-by-2-by-2 grid.
+Slots assume equal module areas. Each search enumerates 8!=40,320 permutations.
+Distance: d(i,j)=abs(xi-xj)+abs(yi-yj)+lambda*abs(zi-zj).
+Cost: C=sum_i sum_j W[i,j]*d(i,j).
+Lambda is an assumed vertical-to-planar unit cost ratio.
+For W=A, baseline 2D costs 44 and optimized 2D costs 32.
+Two-layer costs are 21, 30, 38, and 54 at lambda=0.25, 1, 2, and 4.
+The baseline-to-optimized planar reduction is 27.27%. These are weighted-distance results, not EVM execution speedups. The search is not a reproduction of the Rect3D optimization algorithm or a routing, timing, or thermal study.
+
+5. Original nine-block feasibility pilot
+The supplied SQD records contain headers and receipt-derived aggregates. The original pilot read all 76 dates per chain, ranked hours by gas, chose hours near the 10th, 50th, and 90th percentiles, and chose a middle-gas block within each hour. Nine candidates and their source hashes are retained in outputs/samples.json.
+This pilot predates the formal phase-stratified analysis. It includes supplements and uses whole-period ranks. The candidates did not drive static layout costs. Formal replay selection must follow the 72-date probability calendar and within-phase low, medium, and high groups. The two Dencun supplements are separate, and the two Base-related calendar dates are outside the current analysis.
+
+6. Current workload-informed matrices
+workload_weighted.py uses the 72 probability dates on each of three chains, giving 216 hourly matrices. Within each phase, seed 20231116 selects two weekdays and one weekend for testing, leaving three dates for training. Dates match across networks, yielding 36 training and 36 test hours per chain.
+Hourly transaction count, contract creation count, and summed block bytes are normalized using each chain's training 5th and 95th percentiles. Inputs are clipped to [0,1]. Equal percentiles yield 0.5. Test data uses frozen training parameters.
+The primary model is:
+W[i,j]=A[i,j]*(1+alpha[i,j]*X_tx+beta[i,j]*X_create+gamma[i,j]*X_bytes).
+All coefficients and functional rationales are fixed in outputs/workload_weighted/mapping_config.yaml. Gas is used only for descriptive load groups.
+Matrices retain symmetry, zero diagonal, and the twelve assumed edges. Connected primary weights range from 1 to 3. Mean training weights determine placements. Frozen placements are evaluated on each held-out hour.
+At lambda=1, two-layer test mean cost reductions relative to optimized planar placement are 5.59% for Ethereum, 4.82% for OP Mainnet, and 5.25% for Arbitrum One. At lambda=0.25, the corresponding reductions are 33.87%, 33.47%, and 33.63%. At lambda=2 and 4 the modeled two-layer cost is higher.
+Coefficient scales 0, 0.5, 1, and 2 and a uniform-scaling control are retained. The independent verifier checks 4,320 hourly scenario costs. These experiments use real observations as proxy inputs, not measured communication bytes.
+
+7. Future trace-derived communication
+A trace-based pipeline requires block transactions and historical state for replay, or sufficiently detailed compatible execution traces. Validate chain, hashes, and transaction counts, then define interfaces, state structures, cache policy, bandwidth, and latency. Map operations to events with source, destination, bytes, and time or cycle.
+T[i,j] sums bytes transferred from module i to j. For illustration only, two 32-byte requests from state to cache yield T[6,7]=64, while one 32-byte response yields T[7,6]=32 using one-based numbering. T can be asymmetric and differs from A and proxy W.
+experiment.py accepts communication-event JSON, but the mapping from actual chain traces is still unimplemented. Input provenance labels are declarations, not automatic authenticity checks. Logical endpoint traffic and physical per-hop traffic require distinct accounting. Byte totals alone do not capture queues, contention, dependencies, or execution time.
+
+8. Reproduction and artifacts
+experiment.py: static topology, candidate selection, exhaustive search, and event input.
+outputs/architecture.json and connection_matrix.txt: static matrix.
+outputs/static_layout.json: original costs and coordinates.
+outputs/samples.json: original nine candidates.
+workload_weighted.py and verify_weighted.py: current proxy experiment and independent checks.
+outputs/workload_weighted/: configuration, audit, split, normalization, matrices, layouts, per-hour results, summaries, figures, manifests, and English methods.
+Run python3 experiment.py for the static experiment. See the repository README and outputs/workload_weighted/reproduce.sh for the current real-observation proxy pipeline. Actual acceleration claims require execution tracing, timing models, RTL, and physical validation.

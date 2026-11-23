@@ -1,0 +1,11 @@
+{
+  "status": "PARTIAL",
+  "verified_historical_points": 8,
+  "total_requests": 278,
+  "first_run_requests": 178,
+  "retry_requests": 100,
+  "retry_stop": "REQUEST_BUDGET_EXHAUSTED",
+  "real_sample_windows": 0,
+  "coverage": "UNAVAILABLE",
+  "trace": "NOT_PROBED"
+}

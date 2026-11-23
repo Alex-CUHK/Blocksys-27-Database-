@@ -1,0 +1,9 @@
+chain,year,status,reason,number,timestamp,hash,parent_hash,source
+ETH,2025,REAL,,22606143,2025-06-01T00:00:23+00:00,0xb27eeb4a2f991647a807eb6dabe32096f4f7e9e241c39114682ff1e03ba78e9f,0x0bc358a1ab32f993c13ad402779f5a3b4b4a3127dc06814cb556a158dffaa1fa,https://ethereum-rpc.publicnode.com
+ETH,2026,REAL,,25218798,2026-06-01T00:00:11+00:00,0x55f8fdbda40a23cd51a9a2bffba625317ed15d9d1cdc2128c7643bf66e2a906e,0xf8764ee0fc709f47e9db4f264b47d0047cb16096ebf950585cbe74e9af80a0c4,https://ethereum-rpc.publicnode.com
+ARB,2025,REAL,,342607969,2025-06-01T00:00:00+00:00,0x70852ceda72efa9ccd33e8c3c35972b64966e98db4f6fa2cceeef371b5fb9614,0x6467f08dac887831b5cf6e379f25a4961b81f88c7629cd331b97fdd79ec1a452,https://arb1.arbitrum.io/rpc
+ARB,2026,BLOCKED,REQUEST_BUDGET_EXHAUSTED,,,,,https://arb1.arbitrum.io/rpc
+OP,2025,BLOCKED,REQUEST_BUDGET_EXHAUSTED,,,,,https://mainnet.optimism.io
+OP,2026,BLOCKED,REQUEST_BUDGET_EXHAUSTED,,,,,https://mainnet.optimism.io
+SCROLL,2025,BLOCKED,REQUEST_BUDGET_EXHAUSTED,,,,,https://rpc.scroll.io
+SCROLL,2026,BLOCKED,REQUEST_BUDGET_EXHAUSTED,,,,,https://rpc.scroll.io

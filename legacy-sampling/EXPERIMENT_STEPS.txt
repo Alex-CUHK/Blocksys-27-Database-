@@ -1,0 +1,25 @@
+Historical planning workflow, November 15, 2026
+This four-network protocol predates the current three-network SQD probability sample and proxy layout experiment. See the repository root README for the current workflow.
+
+TASK00 was implemented. TASK01 was reviewed and blocked by source access and coverage.
+1. cd legacy-sampling
+2. python3 src/workload.py doctor
+3. python3 -m unittest discover -s tests -v
+   If installed, pytest is also supported. Dependencies were not automatically installed in the original audit.
+4. python3 src/workload.py fixture --resume
+   Generates only a SYNTHETIC offline database, never real samples.
+5. python3 src/workload.py check-sources --dry-run
+6. python3 src/workload.py report
+   Exit code 2 denotes the expected BLOCKED state.
+
+Network path: configure four RPC_URL environment variables. After confirming free allowance and service permission, run:
+python3 src/workload.py check-sources --confirm-free --max-requests 250
+The historical probe checks one point in each of two years. It does not prove full archive coverage.
+The original acceptance condition required complete hourly aggregates for twelve chain-period populations with source URL, SQL, query_id, export time, license, and field semantics, followed by TASK02 through TASK05. Formal percentiles require the complete target population. Real pilot review precedes protocol freeze, tracing, and expansion to 288 windows.
+
+Server-side SQL option, without changing the historical protocol:
+1. Read outputs/SQL_SOURCE_REVIEW.md. Account access and spending require authorization before remote SQL.
+2. queries/dune_schema_preflight.sql and queries/dune_ethereum_p1.sql are unexecuted drafts.
+3. Validate Ethereum P1 first using the eight acceptance steps before extending to four networks.
+4. python3 scripts/evaluate_probability_alternative.py
+   Produces offline design calculations only. It does not sample or change configuration. See outputs/PROBABILITY_ALTERNATIVE.md.

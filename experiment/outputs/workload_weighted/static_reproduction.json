@@ -1,0 +1,278 @@
+{
+  "baseline_2d": {
+    "cost": 44,
+    "coordinates": {
+      "dispatch": [
+        0,
+        0,
+        0
+      ],
+      "stack": [
+        1,
+        0,
+        0
+      ],
+      "alu": [
+        2,
+        0,
+        0
+      ],
+      "keccak": [
+        3,
+        0,
+        0
+      ],
+      "memory": [
+        0,
+        1,
+        0
+      ],
+      "state": [
+        1,
+        1,
+        0
+      ],
+      "cache": [
+        2,
+        1,
+        0
+      ],
+      "dram": [
+        3,
+        1,
+        0
+      ]
+    }
+  },
+  "optimized_2d": {
+    "cost": 32,
+    "coordinates": {
+      "dispatch": [
+        1,
+        0,
+        0
+      ],
+      "stack": [
+        2,
+        0,
+        0
+      ],
+      "alu": [
+        0,
+        0,
+        0
+      ],
+      "keccak": [
+        0,
+        1,
+        0
+      ],
+      "memory": [
+        1,
+        1,
+        0
+      ],
+      "state": [
+        3,
+        0,
+        0
+      ],
+      "cache": [
+        3,
+        1,
+        0
+      ],
+      "dram": [
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  "three_dimensional_sensitivity": [
+    {
+      "vertical_cost": 0.25,
+      "cost": 21.0,
+      "coordinates": {
+        "dispatch": [
+          0,
+          0,
+          0
+        ],
+        "stack": [
+          0,
+          0,
+          1
+        ],
+        "alu": [
+          1,
+          0,
+          1
+        ],
+        "keccak": [
+          0,
+          1,
+          0
+        ],
+        "memory": [
+          0,
+          1,
+          1
+        ],
+        "state": [
+          1,
+          0,
+          0
+        ],
+        "cache": [
+          1,
+          1,
+          0
+        ],
+        "dram": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "vertical_cost": 1,
+      "cost": 30,
+      "coordinates": {
+        "dispatch": [
+          0,
+          0,
+          0
+        ],
+        "stack": [
+          1,
+          0,
+          0
+        ],
+        "alu": [
+          1,
+          1,
+          0
+        ],
+        "keccak": [
+          0,
+          0,
+          1
+        ],
+        "memory": [
+          1,
+          0,
+          1
+        ],
+        "state": [
+          0,
+          1,
+          0
+        ],
+        "cache": [
+          0,
+          1,
+          1
+        ],
+        "dram": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "vertical_cost": 2,
+      "cost": 38,
+      "coordinates": {
+        "dispatch": [
+          0,
+          0,
+          0
+        ],
+        "stack": [
+          1,
+          0,
+          0
+        ],
+        "alu": [
+          1,
+          1,
+          0
+        ],
+        "keccak": [
+          0,
+          0,
+          1
+        ],
+        "memory": [
+          1,
+          0,
+          1
+        ],
+        "state": [
+          0,
+          1,
+          0
+        ],
+        "cache": [
+          0,
+          1,
+          1
+        ],
+        "dram": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "vertical_cost": 4,
+      "cost": 54,
+      "coordinates": {
+        "dispatch": [
+          0,
+          0,
+          0
+        ],
+        "stack": [
+          1,
+          0,
+          0
+        ],
+        "alu": [
+          1,
+          1,
+          0
+        ],
+        "keccak": [
+          0,
+          0,
+          1
+        ],
+        "memory": [
+          1,
+          0,
+          1
+        ],
+        "state": [
+          0,
+          1,
+          0
+        ],
+        "cache": [
+          0,
+          1,
+          1
+        ],
+        "dram": [
+          1,
+          1,
+          1
+        ]
+      }
+    }
+  ]
+}

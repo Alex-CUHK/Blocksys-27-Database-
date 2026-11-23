@@ -1,0 +1,866 @@
+[
+  {
+    "file": "Ethereum_Mainnet/2023-11-19.csv.gz",
+    "sha256": "f4d8403c0e15db1904b4b15a3fdf97875c0294be7c2ab1698a37aa3df35c33c4"
+  },
+  {
+    "file": "Ethereum_Mainnet/2023-12-03.csv.gz",
+    "sha256": "2daefedc74fbcec5d1096c9832213d9cf6734a396b70f7db6e1d3f69047caeab"
+  },
+  {
+    "file": "Ethereum_Mainnet/2023-12-14.csv.gz",
+    "sha256": "204b482979ff32137b49da19e47500a0561fec9c7261cda5d94ab90f0beb4744"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-01-04.csv.gz",
+    "sha256": "17f10e001a1e998cc298f03df7b66fe2426006443abda574aaf2647280976673"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-01-23.csv.gz",
+    "sha256": "6f5fc52fa1dafd750ed29da32cfc304d16ae383a6f6335a16c1d5d4b4d0f1afe"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-02-13.csv.gz",
+    "sha256": "72749733f56ee93e9f35caf1e815fb740d7ffef996165f802494c8d786acf411"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-02-23.csv.gz",
+    "sha256": "07a3bd4dcd1ec77706f705a149de083150c00edfd46427bb6932ab8ccfc330eb"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-03-03.csv.gz",
+    "sha256": "986f439bc93585081d8a139725a89cd3ee6f61d27175d09480b86d8d1dddd8ea"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-03-06.csv.gz",
+    "sha256": "18e319b7434c0aad81ffd17b97508a8d4ed402bca7a777f76f2afa4374005dd2"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-03-18.csv.gz",
+    "sha256": "97149e6b66c6b1f065820328035ae31139ad56f042a5c7d49bb6fa09216ea1ae"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-03-28.csv.gz",
+    "sha256": "9cb54f90ce6da65ed2b96dbcbe45736b539bb70391af7eae603e718ddf1c5ccd"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-04-06.csv.gz",
+    "sha256": "544d9e4998e9992ad545f880be072b8c89ce0f0df5bc5d6c9ac38bd444293406"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-05-18.csv.gz",
+    "sha256": "a9529395f5c9958fa39ace09ed34beff6d38411fa9f39b73e1e95175a78437af"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-06-11.csv.gz",
+    "sha256": "04220e79eb0e9360500b2e6db4b6fd3f759920cd8a592532f2e74f0ed7f06a0d"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-07-05.csv.gz",
+    "sha256": "82505bf5af28b078b680ed0849531f4585241121e0ca4d54993201ba7fb3b53b"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-07-24.csv.gz",
+    "sha256": "49a4d64cdc09eda7761da5872ea60449bb794a20d007a29b7103f479b72cbca4"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-09.csv.gz",
+    "sha256": "6934d3d3214ba5131e4cb35d6add1cdf371bf48372e32cf245fc012b8df142e9"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-10.csv.gz",
+    "sha256": "7bdd122ce354fc6f8e83f2dfab3f38017db0e7941cc3cfe4bce4ba6120aa5f74"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-18.csv.gz",
+    "sha256": "906c66403c151504c04c821810c2ce7c76960a5c14cc29c259cb764534a5c2f2"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-22.csv.gz",
+    "sha256": "d0dcb2b1514ef6df503bd67338b355bc0f8b2103acb4bd038f2411ce5e9c98fd"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-30.csv.gz",
+    "sha256": "f887f1f2ad001b405ce091f7e79f880b484f222d4547b33fc2cab34610db9494"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-08-31.csv.gz",
+    "sha256": "bdd13f4a366fc14fd445bb5d4ae168e8349241e462f33ecbe68d92f856e90f43"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-10-01.csv.gz",
+    "sha256": "c44ec3611e5fe992ba174a90d766acd48464b2a27a833e5a11f18f4d521dcd58"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-10-28.csv.gz",
+    "sha256": "93cda3beb72f0c9ec0f6a7de61488b9f844b88b6dfad188ba1d886c0b350e83d"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-11-29.csv.gz",
+    "sha256": "323742b64905b6e82940d9e70aee5430602d7fc94aafbf433fa1afeb269fa1a1"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-12-04.csv.gz",
+    "sha256": "f11e316018992d956fad9e6e060c8961d2f668cdbf491d07b02f2d79126e9a77"
+  },
+  {
+    "file": "Ethereum_Mainnet/2024-12-14.csv.gz",
+    "sha256": "d648561fcf22aa82b53a78fce7cf43b32347bad6b5154e00312f7d4c21df50e1"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-01-21.csv.gz",
+    "sha256": "841561623ae22ea1e0c65bcbdb832b0d529d65d4061dfa12fb68a984c176e2e4"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-01-30.csv.gz",
+    "sha256": "8fdd6cb249f2c044cfb1ced400cdd77aa43521abb9a072b50d6bd4ce5aac39ab"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-02-01.csv.gz",
+    "sha256": "9231051f8b2e1a2d6b6439479227e0c4e4183d9b016847dfb01aadc91680504a"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-02-22.csv.gz",
+    "sha256": "50259999773d74f3e35e915a9f1bce7a7ebb08c56d3fe9d5c114d0373a822ea9"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-03-24.csv.gz",
+    "sha256": "c808d6b42e12a7a40eefeb29de2435589cd63af2e3777e3b34205c30eb0cbe45"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-03-31.csv.gz",
+    "sha256": "3ab56f20d10501d36cfba7884f4c74674781866788841be3bce6ba797cb1abbb"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-04-09.csv.gz",
+    "sha256": "493506191631d21e1886696673215a9cb6cc488fc89cf3287e2b198147c840df"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-04-10.csv.gz",
+    "sha256": "a7caae276e2a305ad60d451dc8c832922b8eb02b3c1bd5787c5a3f30e72e29ec"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-04-19.csv.gz",
+    "sha256": "26b7b96fe4c5abb05994e8f25a66f6fb42b5f6cc12e13f17f32f2aab35ef65e1"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-06-06.csv.gz",
+    "sha256": "1c89c17a226323ff4cd8895c064a4e38bfec525fa80f85b30589895b7bf41a76"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-06-09.csv.gz",
+    "sha256": "5d682ec593bb08dff38ef34c711ce800f182739a3b715a153111aaaba6b350ab"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-06-22.csv.gz",
+    "sha256": "c199b8a5d6e08692c710560388e482437112e01c63e7d414b214c72e713ebd2b"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-06-29.csv.gz",
+    "sha256": "0d1a1d00ad29988b66092d91584df185a12c76cd3f3b9013d28809e5c5fe6c6a"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-07-04.csv.gz",
+    "sha256": "c45f861cade7d7720ae77b68e483107c6a288df20f38ca4d77821af434487661"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-08-08.csv.gz",
+    "sha256": "959d88011092c78343308ee610ac6cdbce96f74d1a139167a3941f082edd1857"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-08-17.csv.gz",
+    "sha256": "0aec39a3cac9cd77756079c637d2119a5b180dddfad7b4796114b0ab97a3e99e"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-08-20.csv.gz",
+    "sha256": "80526edeb11c3a48b0b123d3f73fbe14addfbce75adf5aa7ba121cec2f87411c"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-08-27.csv.gz",
+    "sha256": "f7ff64ffebf8a178b6c241626ee00455e9cdc4efb562e9505ad8b59f1e5cbd08"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-08-28.csv.gz",
+    "sha256": "6e936006f5026e7d7d3823c40e34da25f95aa2416e938cd6527384ea9311882c"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-11-11.csv.gz",
+    "sha256": "e230681b349cdbcbf20446848a9c9fb9bfc582cabaf76fc793b382431d73fe39"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-11-15.csv.gz",
+    "sha256": "9616c52b6cb19709efb1f865cd29003c64e32af6c32500e7d5701939bb4a9827"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-11-21.csv.gz",
+    "sha256": "ba6f8a8df5e090daffcc03e4a6ed069ce7668682e9f0f64a585591bd2b295932"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-12-02.csv.gz",
+    "sha256": "8f78bc068db1a48db34e9b1f170d460c0c8559a561b2eb760db3aeaf4bb02703"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-12-12.csv.gz",
+    "sha256": "924e0b9e3255f30f8e0f2035ed7678e03db989c640a394868338e65b6d5c6442"
+  },
+  {
+    "file": "Ethereum_Mainnet/2025-12-20.csv.gz",
+    "sha256": "d0747fbe28b04e05a7982736eceeb25501ef7409b7c97ae48cc091403ed11026"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-01-06.csv.gz",
+    "sha256": "77f1b6ea823f17375c23c0e6b6124c96cda08594f4b2563a890c200a30bba483"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-02-08.csv.gz",
+    "sha256": "7b88709919497e9fcbcaf6e06574a409fc0ae39258c3cf793f865321c677ceb3"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-03-06.csv.gz",
+    "sha256": "0ca7074e9ecfed33bf104a344b3ea7279e2e2cc5d45e4669cd89b257a3d8ddde"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-03-15.csv.gz",
+    "sha256": "71e9cc377f85f4dc0d8fe5e330a3d934a28e287b732f703963f62b21eee8b71c"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-03-27.csv.gz",
+    "sha256": "ffdf825297f2d97b307b2f12f34c8d3078b0f976db07d061e626763db5bd620a"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-04-06.csv.gz",
+    "sha256": "0df80437a9cb15b506726c3d6a382061b9534e00cc11f7c0881ef6d1b3ff2410"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-04-12.csv.gz",
+    "sha256": "a617a61326d1e2f037b1c3af4838a36db3dafc524ffd8f262751d570f8e90e76"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-05-08.csv.gz",
+    "sha256": "d69c7b884568d061d5f2ce768373576f8ea305a640e0c169bc0c8c73c8646253"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-05-24.csv.gz",
+    "sha256": "e530f5ac43235308077d0d1424e4b78e1e6655ecfe5b419222a46b236ad14c34"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-05-25.csv.gz",
+    "sha256": "37d96546a77ab409b2ab15466bf6c7d189dc62fbe8d6cb1ff1c3ce864b288ce6"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-06-18.csv.gz",
+    "sha256": "fa63054c7b133eb5dcf1e2b83f1c54e09b6df99da376742bdf299dec37dc7cbc"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-07-10.csv.gz",
+    "sha256": "5dabb07547445905dda347e8ad256afa4d59396f2fc26ff8e6d38ecafea18e48"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-07-11.csv.gz",
+    "sha256": "56648b45f82dcb72cbae3fa5284d443b61e9e083ef0038d56e2ccf76f5270970"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-07-27.csv.gz",
+    "sha256": "9343768c5afe2d7f0db4fd8547a6a9aa42bf13b1d6fd92f7d4ec245e1d395f38"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-08-23.csv.gz",
+    "sha256": "9ccce298aa8c1e43bd17a0d16cabedd72f0987eed8b30f4044b8fea94e870e79"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-08-26.csv.gz",
+    "sha256": "4297b1b0d8f8fbe9c7dd6d20d3b9de9296e367c0b86e7c2d1f4700c9464c1cfb"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-09-11.csv.gz",
+    "sha256": "d7a26773e5134de434670ed8918e009b177d8b9451902350a072d9aaf1a30044"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-10-01.csv.gz",
+    "sha256": "68946a0a8d9c4c50b6d06979e2fbce7b0c153683da94ff98982b033227f9f6b4"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-10-04.csv.gz",
+    "sha256": "221cb02214c245f1ec4917470e0ab18658eec3561d295f437fa1d95b60335e27"
+  },
+  {
+    "file": "Ethereum_Mainnet/2026-11-03.csv.gz",
+    "sha256": "739faa9f89f9640f6ce47b5f5c4c58e9fa99d27bcd465dd0ad40e43e1bbf4565"
+  },
+  {
+    "file": "Optimism/2023-11-19.csv.gz",
+    "sha256": "5281196b06701b890388ead2a36886381380f3d586af9ea1de4bc23ff2733cb9"
+  },
+  {
+    "file": "Optimism/2023-12-03.csv.gz",
+    "sha256": "4c42419f43d7e413c21a1eef51d901abfcc85c26195c04462803528174b72262"
+  },
+  {
+    "file": "Optimism/2023-12-14.csv.gz",
+    "sha256": "e626f38db6bf95ae8f6bd18820842db0389737244d19e9a4523b06a72a120188"
+  },
+  {
+    "file": "Optimism/2024-01-04.csv.gz",
+    "sha256": "36f279048b9ced089acd591b719ced377c4b88178e6490d5deb21fd981864cc7"
+  },
+  {
+    "file": "Optimism/2024-01-23.csv.gz",
+    "sha256": "4d7d7520a15f2612d155acca2ec9b91c62ae4313c6d1bd05caf4d255fc258589"
+  },
+  {
+    "file": "Optimism/2024-02-13.csv.gz",
+    "sha256": "9c5498291c374cb076933fc3afe39c69ae7692590c1c7c88895995ae865b6c11"
+  },
+  {
+    "file": "Optimism/2024-02-23.csv.gz",
+    "sha256": "fbb28360adf2aecd920f619b42708f09bd10d635b270566d258c80b99b198af2"
+  },
+  {
+    "file": "Optimism/2024-03-03.csv.gz",
+    "sha256": "4fd2e807ca000fee03591a8fa4dce41895c31869cb89028b3a30746498987361"
+  },
+  {
+    "file": "Optimism/2024-03-06.csv.gz",
+    "sha256": "4920a34645779d07f75933991ef620ac77ae7a009c2a23022102130b08a94cbf"
+  },
+  {
+    "file": "Optimism/2024-03-18.csv.gz",
+    "sha256": "2ad88a19a3aea149de5cbe8e44f14cd7bb15399595215002b00c463d017ca3bb"
+  },
+  {
+    "file": "Optimism/2024-03-28.csv.gz",
+    "sha256": "a5cf9771b64550d20bd3fae8c0522c61665287be50fb091ad919846e24ab1ca6"
+  },
+  {
+    "file": "Optimism/2024-04-06.csv.gz",
+    "sha256": "e6a7287f04d0ffa549bf1b8f11a25e8cbda07604267786203e3cf5e535cb2820"
+  },
+  {
+    "file": "Optimism/2024-05-18.csv.gz",
+    "sha256": "298b9e713f942f70dca582dce873a4db8ae1365f0f4fd20f4b828e7d79d41838"
+  },
+  {
+    "file": "Optimism/2024-06-11.csv.gz",
+    "sha256": "a413544f7cde780f74b2f537c7399cfbf9c5753df1cf3119525279245984125f"
+  },
+  {
+    "file": "Optimism/2024-07-05.csv.gz",
+    "sha256": "50bdb17494d5e592f53092521bc8bf37a36a079349b95d7ed6bcf8b3a97aa1b6"
+  },
+  {
+    "file": "Optimism/2024-07-24.csv.gz",
+    "sha256": "3d0ef4efb592eabb4e162d109e862f597a5504d6860aa50e0cde68eb136bd4d9"
+  },
+  {
+    "file": "Optimism/2024-08-09.csv.gz",
+    "sha256": "6ebf45f97af8b2603cd80f21b42d07ca1ef714982f2a0a35b6cb67942e64ce96"
+  },
+  {
+    "file": "Optimism/2024-08-10.csv.gz",
+    "sha256": "0f0af32333a75f26f3c04f14413ac9a21181e47f6f0840f898b12f0a04b5f969"
+  },
+  {
+    "file": "Optimism/2024-08-18.csv.gz",
+    "sha256": "84dcc18ca0feca68ace9be59104d183ed8aada6bce33b1d634938b439c04370d"
+  },
+  {
+    "file": "Optimism/2024-08-22.csv.gz",
+    "sha256": "2656c77c4851bc28285f994427de41848ace13cb66f91ec719b5b0d03acf6ba8"
+  },
+  {
+    "file": "Optimism/2024-08-30.csv.gz",
+    "sha256": "964244ba04c23bb4b87cb1ea01abc96a95a99cadf353e695e8e4d72f6aafd696"
+  },
+  {
+    "file": "Optimism/2024-08-31.csv.gz",
+    "sha256": "04fc1d221701d3365b48e745f496f408256e2436fe6b56bc4aefe60d294dae8d"
+  },
+  {
+    "file": "Optimism/2024-10-01.csv.gz",
+    "sha256": "fc1d7daedf706fd878f71e0e4c332682d28301547b216e12ea104d63a392c898"
+  },
+  {
+    "file": "Optimism/2024-10-28.csv.gz",
+    "sha256": "0e1bbb7f580ffd6e2aa1716b5c10e2eb4ba6166a16e4b6eb58351d424c454455"
+  },
+  {
+    "file": "Optimism/2024-11-29.csv.gz",
+    "sha256": "adb4158b51eb93d96fe42ed76dd4041530630c24dc16945d069d47aeaeb20903"
+  },
+  {
+    "file": "Optimism/2024-12-04.csv.gz",
+    "sha256": "a0dcb8227453f4b496cb2573a3be1a0e405cdb191dfaa605bad410abb94166d0"
+  },
+  {
+    "file": "Optimism/2024-12-14.csv.gz",
+    "sha256": "44a4bc6964c6b8a17c22b090084df98c09dfef7cbef3a9ee2a0961d194e446f6"
+  },
+  {
+    "file": "Optimism/2025-01-21.csv.gz",
+    "sha256": "5a27a4dae7950b6135a0278912eba8deabbcce18223a3b748cc99368fe1b04a2"
+  },
+  {
+    "file": "Optimism/2025-01-30.csv.gz",
+    "sha256": "fa402a843c839f89e22e3e29d7e5809170fd1cb0ac27b64d2c26ae19a3eb28dc"
+  },
+  {
+    "file": "Optimism/2025-02-01.csv.gz",
+    "sha256": "92ad76af5d89c82e218c55c8789a68abc19b30c961c122006e6d0d9ce1de2720"
+  },
+  {
+    "file": "Optimism/2025-02-22.csv.gz",
+    "sha256": "284e189532bb0315a217f501a47c78b6cf62dca6bd2cd2518d5c98dfeafcad10"
+  },
+  {
+    "file": "Optimism/2025-03-24.csv.gz",
+    "sha256": "7e0972a67cb9f265384c6510206e4078edf3d9d40641520a5a029210e12a53a2"
+  },
+  {
+    "file": "Optimism/2025-03-31.csv.gz",
+    "sha256": "1b4a6cb64bcddd2c0d954bbc8e15e9686390f99f524c9c27c36fc27a3588de20"
+  },
+  {
+    "file": "Optimism/2025-04-09.csv.gz",
+    "sha256": "c96b57575ccadf8e83b5ddad133de9b8868e8845936b139323b36d134e143f84"
+  },
+  {
+    "file": "Optimism/2025-04-10.csv.gz",
+    "sha256": "9540060de8d9128dce2ffa3e55e73de3d656bcf87dbf470025ef81da56c421c5"
+  },
+  {
+    "file": "Optimism/2025-04-19.csv.gz",
+    "sha256": "d7a3a0ed91c257ff8837cc2a7a41ba2d68807aa40012bfb3e69c6c701db46af7"
+  },
+  {
+    "file": "Optimism/2025-06-06.csv.gz",
+    "sha256": "0ed05c46fe7a30d2a3ef92e864701211be7ab789eaeb8abdd2d30643f67f2474"
+  },
+  {
+    "file": "Optimism/2025-06-09.csv.gz",
+    "sha256": "4b698a513c7d452e66301ea9b5f8a04356bc6b5477f5f754fff1489cf01870be"
+  },
+  {
+    "file": "Optimism/2025-06-22.csv.gz",
+    "sha256": "9511f3b89c6e341cfa414c630ce6d7ce271d0c4a6ce5303581b5c96f2e5060bc"
+  },
+  {
+    "file": "Optimism/2025-06-29.csv.gz",
+    "sha256": "e4d1bb4789ac8b615f5d51a773faded1eb72b9362bd6d33980f13985530d32c7"
+  },
+  {
+    "file": "Optimism/2025-07-04.csv.gz",
+    "sha256": "0126e2d0b808b41402dbac9503483d40e5c417f18319415cdc087a615800c995"
+  },
+  {
+    "file": "Optimism/2025-08-08.csv.gz",
+    "sha256": "a8df2ba498ad30aa323912280ebc6f66462236303bad8c76b88f0f5d10a82ca4"
+  },
+  {
+    "file": "Optimism/2025-08-17.csv.gz",
+    "sha256": "768fa278f91ca8ad0df4063cfc0dfdb0617b95bbfb3b43049f1d31c354eb8cf3"
+  },
+  {
+    "file": "Optimism/2025-08-20.csv.gz",
+    "sha256": "f81ee1c41308330476a050b6a57d35bdd38ef9582b2f41b62e96677212253be0"
+  },
+  {
+    "file": "Optimism/2025-08-27.csv.gz",
+    "sha256": "c33dad72ba7288684d38465f3ef705348e1329ac15cb8c569fd3b2a4d3ec3a69"
+  },
+  {
+    "file": "Optimism/2025-08-28.csv.gz",
+    "sha256": "df607971b6d623f6d3eb45ca91a4d3314bfc7b0bbf9a67b5c0cda3422da42bfc"
+  },
+  {
+    "file": "Optimism/2025-11-11.csv.gz",
+    "sha256": "7aca3ac434c4b80446d8d3313042cabb5f44aa2fc4daaab3e47408f71eec2642"
+  },
+  {
+    "file": "Optimism/2025-11-15.csv.gz",
+    "sha256": "f3d0e5877c22c1a56a737e754f23b30a0ac5fa289765f2da18c413234a6f4236"
+  },
+  {
+    "file": "Optimism/2025-11-21.csv.gz",
+    "sha256": "9f2965a166252afdd482c27956dd6761ac5741901b6421da8edffc13cfd0527d"
+  },
+  {
+    "file": "Optimism/2025-12-02.csv.gz",
+    "sha256": "022089160cc965901d82a90546b59f9d607a32ef58fd5492db4a4d243ffe1869"
+  },
+  {
+    "file": "Optimism/2025-12-12.csv.gz",
+    "sha256": "ab6a13e9f9a272736b43434f7b209f8a2edca43494898b1308e86657167670c7"
+  },
+  {
+    "file": "Optimism/2025-12-20.csv.gz",
+    "sha256": "fde4cacb6813a75d4dd0c9802fb64acf3c090153de55cca7c5a051fb9ec4b679"
+  },
+  {
+    "file": "Optimism/2026-01-06.csv.gz",
+    "sha256": "3a9f52c7a3e2bc45708561174e7ce85f89dab6c1ad3d725bfb9bcdc82a81d4f1"
+  },
+  {
+    "file": "Optimism/2026-02-08.csv.gz",
+    "sha256": "89980c8e4101cc89d0402a7c4757206d148aebd7b00baa702938d1f9dea08603"
+  },
+  {
+    "file": "Optimism/2026-03-06.csv.gz",
+    "sha256": "a674112f8bdaca54eff9fbe2b8cf1bf7688ddb68f861ad89dc31d0c051af815e"
+  },
+  {
+    "file": "Optimism/2026-03-15.csv.gz",
+    "sha256": "a78233e6d3405856c43e4c91279a5fe2c2403321791dae01020f4fa9de92f32b"
+  },
+  {
+    "file": "Optimism/2026-03-27.csv.gz",
+    "sha256": "2bc1bca95712a6cb2fea070b74f18da52e4f03d7ed0def35acdc3595755b395d"
+  },
+  {
+    "file": "Optimism/2026-04-06.csv.gz",
+    "sha256": "947a13b6de24d60c01d2a485bb3d3f916f261c4205d00fefcfe956cf03dc5b41"
+  },
+  {
+    "file": "Optimism/2026-04-12.csv.gz",
+    "sha256": "2ddd10cf7fd8d9e3aa501f61232939fb237065479396e101a770a64d1b8f6e68"
+  },
+  {
+    "file": "Optimism/2026-05-08.csv.gz",
+    "sha256": "90d092b47730bda5b841c0324b02ac93f070864a5cd42cf0f5f71f58334d1297"
+  },
+  {
+    "file": "Optimism/2026-05-24.csv.gz",
+    "sha256": "29ab36b62f3389ef2565324b12961b20263b65d8ef8084b022a2de2f73cf5f26"
+  },
+  {
+    "file": "Optimism/2026-05-25.csv.gz",
+    "sha256": "ce55d3d340747920745fcbb37d210ffe426f0339626f4dc5937020786a30b1b6"
+  },
+  {
+    "file": "Optimism/2026-06-18.csv.gz",
+    "sha256": "ac6e151fbab5e53a89f98452129b258d5ab91db322bdcea0a77efa14e67de5c2"
+  },
+  {
+    "file": "Optimism/2026-07-10.csv.gz",
+    "sha256": "5a5e14794003648cb888ba2560e85c737cb7211ce262b3bda068c6090b581e5a"
+  },
+  {
+    "file": "Optimism/2026-07-11.csv.gz",
+    "sha256": "58c669ea0085f94134442d98925cad9dad4917118226df79adf8249b4689661e"
+  },
+  {
+    "file": "Optimism/2026-07-27.csv.gz",
+    "sha256": "709bd8fb8f99114886cd321197ade5d86834394020eea447712e4b5730007df9"
+  },
+  {
+    "file": "Optimism/2026-08-23.csv.gz",
+    "sha256": "2a5e87627c48cc0b0060c171e0c252c593fd5e6ce41b9f3012d9c4763ad44622"
+  },
+  {
+    "file": "Optimism/2026-08-26.csv.gz",
+    "sha256": "96aa2b42cbcb51f9e4c7a592e200194b3d90784616ccb968e17f60f33938ac6e"
+  },
+  {
+    "file": "Optimism/2026-09-11.csv.gz",
+    "sha256": "2d438cfde4d4a91723ffa531d9cee30f30ec1a3e020c3b6fb32ced172ba334a3"
+  },
+  {
+    "file": "Optimism/2026-10-01.csv.gz",
+    "sha256": "7268f5ada9777a51bd0f35c3bd71da384953c307ffaf914bb90e09da20c73ad8"
+  },
+  {
+    "file": "Optimism/2026-10-04.csv.gz",
+    "sha256": "aa7c28c08306bb03544472526461126ce213a5b650c1c67d5744e39d45f597e2"
+  },
+  {
+    "file": "Optimism/2026-11-03.csv.gz",
+    "sha256": "0bfc28acb5935c8b90f8565fcb17526eb341ab88c91e42c454256b6bd5136b39"
+  },
+  {
+    "file": "Arbitrum_One/2023-11-19.csv.gz",
+    "sha256": "a0485e8b4e758f7f664ca811d8473db9483df3c9672e5f6818e0a04f3874fa36"
+  },
+  {
+    "file": "Arbitrum_One/2023-12-03.csv.gz",
+    "sha256": "7aa843e6777a2cda9c4ba7ec792644c009e6ebc93fed7653d1f805d8b3edb29e"
+  },
+  {
+    "file": "Arbitrum_One/2023-12-14.csv.gz",
+    "sha256": "a6ee8da2e6a434056afeb6541fa7df2406ff14a166707ac8ada4001050eb840d"
+  },
+  {
+    "file": "Arbitrum_One/2024-01-04.csv.gz",
+    "sha256": "69e1e28f3143e6455d28c24d6b9c95fd5052a70093381b0ad848951836b07adf"
+  },
+  {
+    "file": "Arbitrum_One/2024-01-23.csv.gz",
+    "sha256": "aeb11ee05abaa35c82c7ac71998e6163fc765d855842767f1b397b4a578d4174"
+  },
+  {
+    "file": "Arbitrum_One/2024-02-13.csv.gz",
+    "sha256": "c3c67214e5d5b9d328db739e59f83e2ed22e204abdae3445cc84b45ebfc8e832"
+  },
+  {
+    "file": "Arbitrum_One/2024-02-23.csv.gz",
+    "sha256": "1edc97e83a2024dbb4fd9d43469fc6836c1c5e9bce11e4b8d20f29526477a208"
+  },
+  {
+    "file": "Arbitrum_One/2024-03-03.csv.gz",
+    "sha256": "8a0ecfc8c25d10c84780c7f3730d2f1c7eecdfaf3c715fcbec965ecc0b6063c9"
+  },
+  {
+    "file": "Arbitrum_One/2024-03-06.csv.gz",
+    "sha256": "562369d4ddc8dfc086b468983e0d8766e3da4c9644a3a7ffb1b095c0986acfb3"
+  },
+  {
+    "file": "Arbitrum_One/2024-03-18.csv.gz",
+    "sha256": "6feb144fef78e0c34959620dae713bbd42aca83e3ac4d46471d438ee9dcf27d3"
+  },
+  {
+    "file": "Arbitrum_One/2024-03-28.csv.gz",
+    "sha256": "c0673252fde6edaeef27b9db1df1bc35e9ec3b8c9fd671e2c03cac4b111320e8"
+  },
+  {
+    "file": "Arbitrum_One/2024-04-06.csv.gz",
+    "sha256": "a318fb58978556cecb6a5d4cb26890418dd7b5f247c4b02d64df052fe6fde02e"
+  },
+  {
+    "file": "Arbitrum_One/2024-05-18.csv.gz",
+    "sha256": "8d5da02db30a0e209fd04055e7ebc7837a0d66ec188f66c0ce20aa4a7abe3ff6"
+  },
+  {
+    "file": "Arbitrum_One/2024-06-11.csv.gz",
+    "sha256": "c6173627d201c4dd3d031650ccaede70f62b0b7c8f4c29310a1c2b8ddeeec0c0"
+  },
+  {
+    "file": "Arbitrum_One/2024-07-05.csv.gz",
+    "sha256": "b7bc3e7cb772aaa071cd6f7704ef1546979cc81876da2f211ce3fd6e90ef6b9f"
+  },
+  {
+    "file": "Arbitrum_One/2024-07-24.csv.gz",
+    "sha256": "36523e50995926d3c349072ba4af5324d536e6dab5ca086219907592497e7eaf"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-09.csv.gz",
+    "sha256": "41d226875d4239b49139026cfd3ff2ffdffb2bbb01fd4c4c964785e2d64b915f"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-10.csv.gz",
+    "sha256": "7752428c3041559f463d3fc424203ce2c9ec8861911a304f9d35699f1ce19bdc"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-18.csv.gz",
+    "sha256": "a2ca123a3f93c59cca497e31e1400b9c699da25f9c0e6b255978f73d61c4cba1"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-22.csv.gz",
+    "sha256": "a91b5ee63d1f4c070046c719ca251eac0c5efe5b72fc16a2e830070a6bee6e44"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-30.csv.gz",
+    "sha256": "343bfb883d93f43c5762055e5be169269400301864ced654bdf0c9809740b2cf"
+  },
+  {
+    "file": "Arbitrum_One/2024-08-31.csv.gz",
+    "sha256": "126a25dbf5d8732865bb14811e8d41f694ff2e52140f1fdf181190e48e7ddce0"
+  },
+  {
+    "file": "Arbitrum_One/2024-10-01.csv.gz",
+    "sha256": "6f8437d3d311176739a8fb328e55c903dcb96eef69bbacdf1e5f9b95f339c123"
+  },
+  {
+    "file": "Arbitrum_One/2024-10-28.csv.gz",
+    "sha256": "dc65ada4569f6edf14751b1dae895218c118f9f2837741221906a48a5fa5042f"
+  },
+  {
+    "file": "Arbitrum_One/2024-11-29.csv.gz",
+    "sha256": "1c10521fe75f70d9f953f8a772be5e015a22f84e0394d5e42b40ecd148ecbf91"
+  },
+  {
+    "file": "Arbitrum_One/2024-12-04.csv.gz",
+    "sha256": "4d8fc18ed84893b7e291f5216c3e7b0066f4b2090478add2a5f0300c2a9226cc"
+  },
+  {
+    "file": "Arbitrum_One/2024-12-14.csv.gz",
+    "sha256": "80098fe96b1e250a99010a584d6135045e423b8cc3d93b8e23a7e1c5aa6b357d"
+  },
+  {
+    "file": "Arbitrum_One/2025-01-21.csv.gz",
+    "sha256": "d952b2f941fae597835174b5d2ef2ef42078087e7700b2a35fd1d4b1e1076cfd"
+  },
+  {
+    "file": "Arbitrum_One/2025-01-30.csv.gz",
+    "sha256": "e2945c7261b815022811728d643aa25d19834652bfbc1a55788eb2132622d71c"
+  },
+  {
+    "file": "Arbitrum_One/2025-02-01.csv.gz",
+    "sha256": "858187d05891379045a584fa4f16be14b9e4d4e50f6391745a7b0a32af42abe6"
+  },
+  {
+    "file": "Arbitrum_One/2025-02-22.csv.gz",
+    "sha256": "89b18ddeeb1e8b43e5b369c6c86202ed48dd3a6e4034d87c701d09702809fef6"
+  },
+  {
+    "file": "Arbitrum_One/2025-03-24.csv.gz",
+    "sha256": "559f36ed82596a01d15813e302117b555bc2d04424b9084533940d1c04aabcf3"
+  },
+  {
+    "file": "Arbitrum_One/2025-03-31.csv.gz",
+    "sha256": "8ef21532739d4d7b413b7f99efceb68c9eee1d0f7e1ca0a4e7e9c6fdeae1eb2a"
+  },
+  {
+    "file": "Arbitrum_One/2025-04-09.csv.gz",
+    "sha256": "1adf67eba3bee0978a3ec3ec7fe22c24aaf6765fffb484f2e486d9370a59fbbf"
+  },
+  {
+    "file": "Arbitrum_One/2025-04-10.csv.gz",
+    "sha256": "fa865e140fd9065153edc66f417e3b9995574861dd6bcfbc6e214b05a7db4c97"
+  },
+  {
+    "file": "Arbitrum_One/2025-04-19.csv.gz",
+    "sha256": "58d099039c195e7ba26395d1bd8074aa631d85bac1335917375f10cc2fa986c1"
+  },
+  {
+    "file": "Arbitrum_One/2025-06-06.csv.gz",
+    "sha256": "45825ea2542c67e8946f4e527e5d07c7650d1d0b0e823d368d430b829358ba4e"
+  },
+  {
+    "file": "Arbitrum_One/2025-06-09.csv.gz",
+    "sha256": "6ae501e4f5782fc40e4cc19f62701f20f6ac89ac40ef6f2a92d6e31556ea6ef3"
+  },
+  {
+    "file": "Arbitrum_One/2025-06-22.csv.gz",
+    "sha256": "df8651930132a6e0098c49d99b2cfa12d71724e19f864708f41bd03416cc28cd"
+  },
+  {
+    "file": "Arbitrum_One/2025-06-29.csv.gz",
+    "sha256": "3a6851c0bf26e0983f1e28382c4f067504596e2a7acd1ba60ef360d53e659554"
+  },
+  {
+    "file": "Arbitrum_One/2025-07-04.csv.gz",
+    "sha256": "68d1e17d711af634609963d75d9d7a0d68c18a43a3f01d844ea0d437cfa7c344"
+  },
+  {
+    "file": "Arbitrum_One/2025-08-08.csv.gz",
+    "sha256": "d33fb7d31baf8bb165b55337a2a0e1a5f13b68448e17ea00f0b8878b227ab534"
+  },
+  {
+    "file": "Arbitrum_One/2025-08-17.csv.gz",
+    "sha256": "8a24ccc38aec88fb503199f12bdcace61d9e31e9c651f3bcb9f3ff20d7167089"
+  },
+  {
+    "file": "Arbitrum_One/2025-08-20.csv.gz",
+    "sha256": "a179b8f8597694466923785edb5436d2077acf20fd4235850de347b944b13c54"
+  },
+  {
+    "file": "Arbitrum_One/2025-08-27.csv.gz",
+    "sha256": "ad7a26365ced2c9bebc8e83d3ed956fde1c28c2bf2bc8b860f480fe829aada37"
+  },
+  {
+    "file": "Arbitrum_One/2025-08-28.csv.gz",
+    "sha256": "e9515a83c4648f1d03afa0693c93c3196c460deda5b2b39b111eaa3c64b26115"
+  },
+  {
+    "file": "Arbitrum_One/2025-11-11.csv.gz",
+    "sha256": "df1fac7f5e847eeab5a2c963b60b07cf4b0e8b3fdcb168ca36d225ecd46a2b35"
+  },
+  {
+    "file": "Arbitrum_One/2025-11-15.csv.gz",
+    "sha256": "3c8c4975631d8c868ec93d1ae735b3075916fe2c3988fcddef8f2f81c579581f"
+  },
+  {
+    "file": "Arbitrum_One/2025-11-21.csv.gz",
+    "sha256": "8a9a9ff01b46b31007340bc84516b2641074f48fadb6df13ce9be78789233e05"
+  },
+  {
+    "file": "Arbitrum_One/2025-12-02.csv.gz",
+    "sha256": "b978c5cbf5ce656362d5a77ccd596bf9fcbc5b96122a3bc825efde22eb548e41"
+  },
+  {
+    "file": "Arbitrum_One/2025-12-12.csv.gz",
+    "sha256": "0258ec89916adb5e0b7b9f500288e25467cca3707c2dacfa9ba591b8ba4e8211"
+  },
+  {
+    "file": "Arbitrum_One/2025-12-20.csv.gz",
+    "sha256": "afa7e50e4f14aef456898858c57f81bad081b459055375fd7763320f330fc15e"
+  },
+  {
+    "file": "Arbitrum_One/2026-01-06.csv.gz",
+    "sha256": "ac26e00b373c43cbbc118dd27f41a53fdb4fcf6805b76faceb8a13806d8d7969"
+  },
+  {
+    "file": "Arbitrum_One/2026-02-08.csv.gz",
+    "sha256": "fa795f93b3816b649c52c1680b0c42e2d41c1a6342a4ed3533459fe1bd194c87"
+  },
+  {
+    "file": "Arbitrum_One/2026-03-06.csv.gz",
+    "sha256": "567472c3a10c807646d830db7207e4ee459360af89e9972b5ac8f40099108685"
+  },
+  {
+    "file": "Arbitrum_One/2026-03-15.csv.gz",
+    "sha256": "2f7e97b0dec9f4b15e47260ce0fe70d1817466d527691c526b7864c3a879476f"
+  },
+  {
+    "file": "Arbitrum_One/2026-03-27.csv.gz",
+    "sha256": "2215ecced2a0cef71552e9295cac3726bd282cb7c12fa2eb8b4f5595ed889bb5"
+  },
+  {
+    "file": "Arbitrum_One/2026-04-06.csv.gz",
+    "sha256": "09be9a5bfbb322d6b8294d558593efe95695d4df1c588bf43bb1d39308638aec"
+  },
+  {
+    "file": "Arbitrum_One/2026-04-12.csv.gz",
+    "sha256": "6e9810a2e7fde677f303d05c9d7837353393924571231efc5fe358a7ad12ac8e"
+  },
+  {
+    "file": "Arbitrum_One/2026-05-08.csv.gz",
+    "sha256": "fe4458f20f02f8ebb7ed42ac419b3e033b0a0f2358b15e35c8bdeb971c92363d"
+  },
+  {
+    "file": "Arbitrum_One/2026-05-24.csv.gz",
+    "sha256": "0317d0fd7f2c8b7208896955f632bedbec03a6748ea600054af227f2e8677029"
+  },
+  {
+    "file": "Arbitrum_One/2026-05-25.csv.gz",
+    "sha256": "eccab62aa4747dce521418ec09d3a337103546b47fd828e31941b63264457e74"
+  },
+  {
+    "file": "Arbitrum_One/2026-06-18.csv.gz",
+    "sha256": "1eb84741747be4587af8387b99b098b65621d0f65ff03201361e34e46e84bb05"
+  },
+  {
+    "file": "Arbitrum_One/2026-07-10.csv.gz",
+    "sha256": "6d4dcd86c9ff967c703a9e8958e3edefc1f02bb5c1cb3ce5935d467b2d341432"
+  },
+  {
+    "file": "Arbitrum_One/2026-07-11.csv.gz",
+    "sha256": "d54eac14983105a82914bc4323c895bef2fc642b7c18b000861792e305f25acc"
+  },
+  {
+    "file": "Arbitrum_One/2026-07-27.csv.gz",
+    "sha256": "7323686d2ba9d62018033f2824adfa91a20eabcc358d25199417f7c217205dfa"
+  },
+  {
+    "file": "Arbitrum_One/2026-08-23.csv.gz",
+    "sha256": "d2f89d5faf23bb84bff980c6e14e569b8e95b34492a471404e6919abdb915e54"
+  },
+  {
+    "file": "Arbitrum_One/2026-08-26.csv.gz",
+    "sha256": "0add5735509b23e87e45d7ebb0b4a5cf222b4debdb0c192bebb2d31c2b475e90"
+  },
+  {
+    "file": "Arbitrum_One/2026-09-11.csv.gz",
+    "sha256": "3ac82538db1b50132904001844bd8ac67d5e3d003f447cdfa16cc6d3a5f518f4"
+  },
+  {
+    "file": "Arbitrum_One/2026-10-01.csv.gz",
+    "sha256": "a9b7b1285c417d93c15b6d01070a37609329225ef286dd5cdbf4dcc8872b251a"
+  },
+  {
+    "file": "Arbitrum_One/2026-10-04.csv.gz",
+    "sha256": "5c445cb665070958e60351f70d6015b3580200f278cb250ecf63a977e79e07cc"
+  },
+  {
+    "file": "Arbitrum_One/2026-11-03.csv.gz",
+    "sha256": "6e8fef0e2d976b9772ac356b9f80206d0d6ac8ac8ffdfbdb34cbd17b67685375"
+  }
+]

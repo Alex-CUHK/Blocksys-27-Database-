@@ -1,0 +1,17 @@
+{
+  "utc": "2026-11-15T07:43:02.796803+00:00",
+  "command": "server_sql_source_review",
+  "status": "BLOCKED_ACCESS",
+  "remote_sql_executions": 0,
+  "accounts_created": 0,
+  "paid_calls": 0,
+  "protocol_changed": false,
+  "real_hour_exports": 0,
+  "artifacts": {
+    "queries/dune_schema_preflight.sql": "741d445d17ced48a52e4015aca0f847efeccd79a7472c15d8b73590cbdc934eb",
+    "queries/dune_ethereum_p1.sql": "d28e9bb8162f016f62403b9744c170464aef3a7a4fce3962a86b1b5bef32a232",
+    "outputs/SQL_SOURCE_REVIEW.md": "c061c9304c77e763a6908eb89e587111689a2cade5f5e8aec42c02617321f83f",
+    "outputs/PROBABILITY_ALTERNATIVE.md": "f59469f26a0890ddc08b7a600b0bd353c3c24f4cd08fd1b86a2850bce2527534",
+    "outputs/probability_error_bounds.csv": "1cdb1d20108845dc127aa55dc94e6eeabe971a53abd3d4c73c8aada1b69c99ee"
+  }
+}

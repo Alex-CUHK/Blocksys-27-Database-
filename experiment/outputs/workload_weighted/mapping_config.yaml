@@ -1,0 +1,25 @@
+{
+  "schema": "JSON-compatible YAML 1.2",
+  "model": "W=A*(1+scale*(alpha*X_tx+beta*X_create+gamma*X_bytes))",
+  "units": "dimensionless proxy weights, not traffic bytes",
+  "seed": 20231116,
+  "normalization": {"fit": "per-chain training dates only", "quantiles": [0.05, 0.95], "outside_range": "clip to [0,1]", "constant_training_feature": 0.5},
+  "split": "Within each phase select 2 of 4 weekdays and 1 of 2 weekends for test. Shared dates across chains. Remaining dates train.",
+  "scales": [0, 0.5, 1, 2],
+  "lambdas": [0.25, 1, 2, 4],
+  "edges": [
+    {"pair":["dispatch","stack"],"coefficients":[1,0,0],"reason":"Transaction count proxies instruction dispatch and operand handling."},
+    {"pair":["dispatch","alu"],"coefficients":[1,0,0],"reason":"Transaction count proxies general execution activity, not opcode count."},
+    {"pair":["dispatch","keccak"],"coefficients":[0,1,0],"reason":"Creation count proxies deployment-associated hashing demand, not measured Keccak calls."},
+    {"pair":["dispatch","memory"],"coefficients":[1,0,1],"reason":"Transaction activity and block data scale proxy execution-memory demand."},
+    {"pair":["dispatch","state"],"coefficients":[1,1,0],"reason":"Transactions and deployments proxy potential state work."},
+    {"pair":["stack","alu"],"coefficients":[1,0,0],"reason":"Transaction activity proxies operand exchange."},
+    {"pair":["stack","memory"],"coefficients":[1,0,1],"reason":"Execution activity and data scale proxy memory operand movement."},
+    {"pair":["stack","state"],"coefficients":[1,1,0],"reason":"Transactions and deployments proxy state addressing activity."},
+    {"pair":["memory","keccak"],"coefficients":[0,1,1],"reason":"Deployment and data scale proxy hash-input movement."},
+    {"pair":["state","cache"],"coefficients":[1,1,0],"reason":"State requests proxy cache demand without claiming hit rates."},
+    {"pair":["cache","dram"],"coefficients":[0,0,1],"reason":"Block bytes proxy potential data movement, not measured cache misses."},
+    {"pair":["memory","dram"],"coefficients":[0,0,1],"reason":"Block bytes proxy potential external data movement, not DRAM traffic."}
+  ],
+  "coefficient_policy": "Fixed unit feature inclusion before optimization. No coefficient search for favorable 3D outcomes."
+}

@@ -1,0 +1,12 @@
+{
+  "source": "/Users/dongfang/Documents/ChatGPT/blocksys2027/github-delivery/data/raw",
+  "config_sha256": "c740c719e456dc8e9a5d8a0fb243f814a8e46e81eaead8004b07bae976a61888",
+  "script_sha256": "e03e9fa5db84386ceb469442ead7495bfb57b7fccac9d35b582ae0a49541227c",
+  "calendar_sha256": "e89f50b8c54b6a67c75efb6be0587c565705521d9f3f2d09d829ac24c6373ad4",
+  "old_outputs_unchanged": true,
+  "python": "3.13.5 (v3.13.5:6cb20a219a8, Jun 11 2025, 12:23:45) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "numpy": "2.5.5",
+  "matplotlib": "3.11.2",
+  "training_dates": 36,
+  "test_dates": 36
+}

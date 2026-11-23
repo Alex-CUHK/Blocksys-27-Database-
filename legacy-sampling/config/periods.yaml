@@ -1,0 +1,4 @@
+# UTC, left-inclusive/right-exclusive; reference config matches runtime constants
+P1: [2025-05-01, 2025-11-01]
+P2: [2025-11-01, 2026-05-01]
+P3: [2026-05-01, 2026-11-01]

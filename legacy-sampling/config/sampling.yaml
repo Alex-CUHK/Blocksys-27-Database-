@@ -1,0 +1,9 @@
+# Planned protocol, not executed; editing this file does not enable sampling
+seed: 20261115
+pilot_target: 36
+full_target: 288
+window_seconds: 300
+split: [4, 2, 2]
+minimum_gap_hours: 24
+maximum_per_week: 2
+status: BLOCKED

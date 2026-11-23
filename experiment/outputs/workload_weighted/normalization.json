@@ -1,0 +1,56 @@
+{
+  "Ethereum_Mainnet": {
+    "features": [
+      "tx_count",
+      "contract_creation_tx_count",
+      "block_size_bytes"
+    ],
+    "lower": [
+      45161.0,
+      24.0,
+      20944986.25
+    ],
+    "upper": [
+      107063.5,
+      106.25,
+      57850435.25
+    ],
+    "constant_value": 0.5
+  },
+  "Optimism": {
+    "features": [
+      "tx_count",
+      "contract_creation_tx_count",
+      "block_size_bytes"
+    ],
+    "lower": [
+      18073.75,
+      3.0,
+      9716874.5
+    ],
+    "upper": [
+      93983.5,
+      295.75,
+      50178282.0
+    ],
+    "constant_value": 0.5
+  },
+  "Arbitrum_One": {
+    "features": [
+      "tx_count",
+      "contract_creation_tx_count",
+      "block_size_bytes"
+    ],
+    "lower": [
+      52892.75,
+      12.25,
+      32476326.0
+    ],
+    "upper": [
+      182468.0,
+      78.0,
+      84216024.75
+    ],
+    "constant_value": 0.5
+  }
+}

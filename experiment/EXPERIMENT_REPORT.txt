@@ -1,3 +1,5 @@
+Historical static pilot report. For the current workload-informed experiment, see EIGHT_MODULE_MATRIX_WORKFLOW.txt and outputs/workload_weighted/methodology.md.
+
 EVM Layout Experiment: Initial Architecture-Level Feasibility Study
 Date: 2026-11-20
 Initiator: Alex-CUHK <alexus20568@gmail.com>

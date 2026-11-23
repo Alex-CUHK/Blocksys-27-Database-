@@ -1140,16 +1140,6 @@
     "sha256": "e3e44694e6a27b79eacd30e371727f0ab3312d6c6860723ebbca80cbb659c802"
   },
   {
-    "path": "data/raw/docs/\u5b57\u6bb5\u5b57\u5178.md",
-    "bytes": 5131,
-    "sha256": "43100cc8d51c0eab23f3f9bc51661b8d2a3c28f911fb7ee2ec68031c35487a77"
-  },
-  {
-    "path": "data/raw/docs/\u62bd\u6837\u8bbe\u8ba1\u8bf4\u660e.md",
-    "bytes": 1512,
-    "sha256": "c263bb967685feecce0e38932f5302e355a858117880c57113e22d64be87a05d"
-  },
-  {
     "path": "data/raw/sampling_calendar.csv",
     "bytes": 6331,
     "sha256": "e89f50b8c54b6a67c75efb6be0587c565705521d9f3f2d09d829ac24c6373ad4"
